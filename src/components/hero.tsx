@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { hero } from "@/data/portfolio";
+import { ViewCounter } from "@/components/view-counter";
 
 export function Hero() {
   return (
@@ -62,7 +63,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.15 }}
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap items-center gap-3"
             >
               <Link
                 href="/Thet_Zaw_Latt_cv.pdf"
@@ -77,6 +78,13 @@ export function Hero() {
               >
                 Contact Me
               </Link>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+              >
+                <ViewCounter />
+              </motion.div>
             </motion.div>
           </div>
           <motion.div
