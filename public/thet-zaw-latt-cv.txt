@@ -1,0 +1,18 @@
+Thet Zaw Latt — Flutter Developer (5+ years)
+
+Profile
+- Flutter specialist with strong UI/UX collaboration using Figma.
+- Publishes production apps to Google Play, Apple App Store, TestFlight, and Huawei App Gallery.
+- Experienced across fintech, streaming, chat, and productivity apps.
+
+Highlights
+- Built and shipped multiple apps within days while maintaining polished UI and performance.
+- Comfortable with Provider/GetX, REST APIs, Firebase, SQL, and app store compliance.
+- Familiar with Android Studio, Xcode workflows, and release automation.
+
+Contact
+- Phone: 0942686025
+- Email: thetzawlatt46@gmail.com
+- GitHub: https://github.com/thetzawlatt77-cell
+- LinkedIn: https://www.linkedin.com/in/thet-zaw-la-966580253
+

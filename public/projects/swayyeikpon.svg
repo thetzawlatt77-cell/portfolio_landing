@@ -1,0 +1,19 @@
+<svg width="960" height="540" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SwayYeikPon project placeholder">
+  <defs>
+    <linearGradient id="gy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop stop-color="#06b6d4" offset="0%"/>
+      <stop stop-color="#4f46e5" offset="50%"/>
+      <stop stop-color="#22d3ee" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="#0b0b11"/>
+  <rect x="32" y="32" width="896" height="476" rx="30" fill="url(#gy)" opacity="0.2"/>
+  <rect x="78" y="78" width="804" height="384" rx="24" fill="#0f172a" opacity="0.74"/>
+  <rect x="150" y="180" width="200" height="140" rx="18" fill="url(#gy)" opacity="0.7"/>
+  <rect x="390" y="160" width="160" height="160" rx="32" fill="url(#gy)" opacity="0.7"/>
+  <rect x="610" y="190" width="200" height="140" rx="18" fill="url(#gy)" opacity="0.7"/>
+  <text x="120" y="360" fill="#e2e8f0" font-family="Inter, system-ui" font-size="38" font-weight="700">SwayYeikPon</text>
+  <text x="120" y="396" fill="#94a3b8" font-family="Inter, system-ui" font-size="20">Ordering · Android · iOS · Web · 11/2025</text>
+  <text x="120" y="432" fill="#06b6d4" font-family="Inter, system-ui" font-size="18">Fast checkout and delivery UX</text>
+</svg>
+
