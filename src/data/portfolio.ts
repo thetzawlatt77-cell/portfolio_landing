@@ -75,6 +75,7 @@ export const projects: Project[] = [
     stack: ["Flutter", "Admin Panel", "Backend API", "Gamification", "Multiplatform"],
     repo: "https://landing-page-quiz-eight.vercel.app/",
     image: "/gallery/quiz-rush/Screenshot_20251210_154603.png",
+    gallerySlug: "quiz-rush",
   },
   {
     title: "SwayYeikPon",
@@ -85,6 +86,7 @@ export const projects: Project[] = [
     stack: ["Flutter", "Web", "Payments", "Delivery UX"],
     repo: "https://shop-landing-page-theta.vercel.app/",
     image: "/gallery/sway-yeik-pon/Screenshot_20251210_154113.png",
+    gallerySlug: "sway-yeik-pon",
   },
   {
     title: "Shwe Soe San",
@@ -95,6 +97,7 @@ export const projects: Project[] = [
     stack: ["Flutter", "Admin Panel", "Backend API", "Security", "Realtime"],
     repo: "https://landing-page-seven-alpha-o2hev3kvjn.vercel.app/",
     image: "/gallery/shwe-soe-san/Screenshot_20251210_153501.png",
+    gallerySlug: "shwe-soe-san",
   },
 ];
 

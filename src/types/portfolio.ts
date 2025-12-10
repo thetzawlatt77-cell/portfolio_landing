@@ -11,6 +11,7 @@ export type Project = {
   stack: string[];
   repo: string;
   image: string;
+  gallerySlug?: string; // Optional slug to match with galleryProjects
 };
 
 export type Experience = {
