@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
   icons: {
-    icon: "/pp.png",
-    apple: "/pp.png",
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
   },
   keywords: [
     "Thet Zaw Latt",
