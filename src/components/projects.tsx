@@ -2,16 +2,18 @@
 
 import { motion } from "framer-motion";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { projects, galleryProjects } from "@/data/portfolio";
 import type { Project } from "@/types/portfolio";
+import { ProjectMedia } from "./project-media";
 import { SectionHeading } from "./section-heading";
 import { ScreenshotModal } from "./screenshot-modal";
 
 const focusRing =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500";
+
+const MAX_VISIBLE_TAGS = 5;
 
 export function Projects() {
   const [openModal, setOpenModal] = useState<string | null>(null);
@@ -60,6 +62,7 @@ export function Projects() {
         {gridProjects.map((project, idx) => {
           const galleryImages = getGalleryImages(project.gallerySlug);
           const hasScreenshots = galleryImages.length > 0;
+          const visibleStack = project.stack.slice(0, MAX_VISIBLE_TAGS);
 
           return (
             <motion.article
@@ -72,48 +75,45 @@ export function Projects() {
                   ? { duration: 0 }
                   : { duration: 0.35, delay: Math.min(idx * 0.05, 0.2) }
               }
-              className="glass group flex h-full flex-col overflow-hidden rounded-3xl"
+              className={`glass group flex h-full flex-col overflow-hidden rounded-3xl ${
+                reduceMotion
+                  ? ""
+                  : "transition duration-300 hover:border-neutral-300/70 hover:shadow-[0_24px_70px_rgba(0,0,0,0.18),0_0_0_1px_var(--border),0_0_36px_var(--glow)] dark:hover:border-white/20"
+              }`}
             >
-              <div className="relative h-52 w-full overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                <Image
-                  src={project.image}
-                  alt={`${project.title} preview`}
-                  fill
-                  className={`object-cover ${
-                    reduceMotion
-                      ? ""
-                      : "transition duration-500 group-hover:scale-105"
-                  }`}
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  quality={75}
-                />
-                <div
-                  className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-black/5 dark:from-black/40"
-                  aria-hidden="true"
-                />
-              </div>
-              <div className="flex flex-1 flex-col gap-3 p-6">
+              <ProjectMedia
+                src={project.image}
+                alt={`${project.title} mobile app preview`}
+                mediaType={project.mediaType}
+                variant={project.mediaVariant ?? "single"}
+                glow={project.mediaGlow ?? "neutral"}
+                secondarySrc={project.secondaryImage}
+                secondaryAlt={`${project.title} secondary screen`}
+                size="card"
+                reduceMotion={!!reduceMotion}
+                onOpenGallery={
+                  hasScreenshots
+                    ? () => openScreens(project.gallerySlug)
+                    : undefined
+                }
+              />
+              <div className="flex flex-1 flex-col gap-3 p-6 pt-3">
                 <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
-                  {project.date ? <span>{project.date}</span> : <span />}
                   <span className="text-emerald-600 dark:text-emerald-400">
                     {project.label}
                   </span>
+                  {project.date ? <span>{project.date}</span> : null}
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">
                     {project.title}
                   </h3>
-                  {project.role ? (
-                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-neutral-500 dark:text-neutral-400">
-                      {project.role}
-                    </p>
-                  ) : null}
                 </div>
                 <p className="text-sm leading-6 text-neutral-700 dark:text-neutral-200">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {project.stack.map((tech) => (
+                  {visibleStack.map((tech) => (
                     <span
                       key={tech}
                       className="tag rounded-full px-3 py-1 text-xs font-semibold text-neutral-700 dark:text-neutral-100"
@@ -147,6 +147,7 @@ export function Projects() {
             onClose={() => setOpenModal(null)}
             title={project.title}
             images={galleryImages}
+            mediaType={project.mediaType}
           />
         );
       })}
@@ -168,6 +169,7 @@ function FeaturedProjectCard({
   onViewScreens: () => void;
 }) {
   const hasScreenshots = galleryImages.length > 0;
+  const visibleStack = project.stack.slice(0, MAX_VISIBLE_TAGS);
 
   return (
     <motion.article
@@ -175,39 +177,43 @@ function FeaturedProjectCard({
       whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={reduceMotion ? { duration: 0 } : { duration: 0.4 }}
-      className="glass group relative overflow-hidden rounded-3xl"
+      className={`glass group relative overflow-hidden rounded-3xl ${
+        reduceMotion
+          ? ""
+          : "transition duration-300 hover:border-neutral-300/70 hover:shadow-[0_28px_80px_rgba(0,0,0,0.2),0_0_0_1px_var(--border),0_0_40px_var(--glow)] dark:hover:border-white/20"
+      }`}
     >
-      <div className="pointer-events-none absolute inset-0 opacity-70" aria-hidden="true">
-        <div className="absolute -left-16 top-0 h-48 w-48 rounded-full bg-indigo-500/20 blur-3xl" />
-        <div className="absolute -right-10 bottom-0 h-48 w-48 rounded-full bg-emerald-400/15 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 opacity-80" aria-hidden="true">
+        <div className="absolute -left-16 top-0 h-52 w-52 rounded-full bg-violet-400/18 blur-3xl" />
+        <div className="absolute -right-10 bottom-0 h-52 w-52 rounded-full bg-emerald-400/16 blur-3xl" />
+        <div className="absolute left-1/3 top-1/2 h-44 w-44 -translate-y-1/2 rounded-full bg-white/20 blur-3xl dark:bg-white/8" />
       </div>
 
-      <div className="relative grid gap-0 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
-        <div className="relative min-h-[240px] overflow-hidden bg-neutral-100 dark:bg-neutral-800 sm:min-h-[340px] lg:min-h-full">
-          <Image
+      <div className="relative grid gap-0 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)]">
+        {/* On mobile: content first, media second */}
+        <div className="relative order-2 border-t border-white/10 lg:order-1 lg:border-r lg:border-t-0 lg:border-white/10 dark:border-white/5">
+          <ProjectMedia
             src={project.image}
-            alt={`${project.title} app preview`}
-            fill
-            className={`object-cover object-top ${
-              reduceMotion ? "" : "transition duration-500 group-hover:scale-[1.03]"
-            }`}
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            quality={75}
+            alt={`${project.title} home screen`}
+            mediaType={project.mediaType}
+            variant={project.mediaVariant ?? "featured"}
+            glow={project.mediaGlow ?? "cheers"}
+            secondarySrc={project.secondaryImage}
+            secondaryAlt={`${project.title} profile screen`}
+            size="featured"
             priority={priority}
+            reduceMotion={reduceMotion}
+            onOpenGallery={hasScreenshots ? onViewScreens : undefined}
           />
-          <div
-            className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/10 lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-black/10"
-            aria-hidden="true"
-          />
-          <span className="absolute left-4 top-4 inline-flex items-center rounded-full border border-white/25 bg-black/45 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur">
-            Featured
-          </span>
         </div>
 
-        <div className="relative flex flex-col gap-4 p-6 sm:p-8">
+        <div className="relative order-1 flex flex-col gap-4 p-6 sm:p-8 lg:order-2">
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">
               {project.label}
+            </span>
+            <span className="rounded-full border border-white/20 bg-black/35 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur dark:bg-white/10">
+              Featured
             </span>
             {project.date ? (
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500 dark:text-neutral-400">
@@ -217,17 +223,12 @@ function FeaturedProjectCard({
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold text-neutral-900 dark:text-white sm:text-3xl">
+            <h3 className="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white sm:text-3xl">
               {project.title}
             </h3>
             {project.subtitle ? (
               <p className="mt-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 sm:text-base">
                 {project.subtitle}
-              </p>
-            ) : null}
-            {project.role ? (
-              <p className="mt-2 text-xs font-medium uppercase tracking-[0.16em] text-neutral-500 dark:text-neutral-400">
-                {project.role}
               </p>
             ) : null}
           </div>
@@ -254,7 +255,7 @@ function FeaturedProjectCard({
           ) : null}
 
           <div className="flex flex-wrap gap-2">
-            {project.stack.map((tech) => (
+            {visibleStack.map((tech) => (
               <span
                 key={tech}
                 className="tag rounded-full px-3 py-1 text-xs font-semibold text-neutral-700 dark:text-neutral-100"
@@ -302,44 +303,47 @@ function ProjectActions({
         : null;
 
   return (
-    <div className={`flex flex-col gap-3 ${prominent ? "sm:flex-row sm:flex-wrap sm:items-center" : ""}`}>
-      <div className="flex flex-wrap items-center gap-3">
-        {primaryHref && primaryLabel ? (
-          <Link
-            href={primaryHref}
-            target={primaryHref.startsWith("http") ? "_blank" : undefined}
-            rel={primaryHref.startsWith("http") ? "noopener noreferrer" : undefined}
-            className={
-              prominent
-                ? `inline-flex items-center gap-2 rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 ${focusRing}`
-                : `inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 transition hover:text-indigo-400 dark:text-indigo-300 ${focusRing} rounded-sm`
-            }
-          >
-            {primaryLabel}
-            <ArrowIcon className="h-4 w-4" />
-          </Link>
-        ) : (
-          <span className="text-sm text-neutral-500 dark:text-neutral-400">
-            Details available on request
-          </span>
-        )}
-        {!prominent ? (
-          <div
-            className="ml-auto h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_6px_rgba(52,211,153,0.12)]"
-            aria-hidden="true"
-          />
-        ) : null}
-      </div>
+    <div
+      className={`flex flex-col gap-3 ${
+        prominent ? "sm:flex-row sm:flex-wrap sm:items-center" : ""
+      }`}
+    >
+      {primaryHref && primaryLabel ? (
+        <Link
+          href={primaryHref}
+          target={primaryHref.startsWith("http") ? "_blank" : undefined}
+          rel={primaryHref.startsWith("http") ? "noopener noreferrer" : undefined}
+          className={
+            prominent
+              ? `inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 ${focusRing}`
+              : `inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 transition hover:text-indigo-400 dark:text-indigo-300 ${focusRing} rounded-sm`
+          }
+        >
+          {primaryLabel}
+          <ArrowIcon className="h-4 w-4" />
+        </Link>
+      ) : null}
+
       {hasScreenshots ? (
         <button
           type="button"
           onClick={onViewScreens}
           aria-label={`View ${screenshotCount} screens for ${project.title}`}
-          className={`inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300/70 bg-white/50 px-4 py-2.5 text-sm font-semibold text-neutral-800 transition hover:border-neutral-800 hover:bg-white/80 dark:border-white/20 dark:bg-neutral-900/50 dark:text-white dark:hover:border-white/50 dark:hover:bg-neutral-800/80 ${focusRing}`}
+          className={
+            prominent
+              ? `inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300/70 bg-white/50 px-4 py-2.5 text-sm font-semibold text-neutral-800 transition hover:border-neutral-800 hover:bg-white/80 dark:border-white/20 dark:bg-neutral-900/50 dark:text-white dark:hover:border-white/50 dark:hover:bg-neutral-800/80 ${focusRing}`
+              : `inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300/70 bg-white/50 px-4 py-2.5 text-sm font-semibold text-neutral-800 transition hover:border-neutral-800 hover:bg-white/80 dark:border-white/20 dark:bg-neutral-900/50 dark:text-white dark:hover:border-white/50 dark:hover:bg-neutral-800/80 ${focusRing}`
+          }
         >
           <ImageIcon className="h-4 w-4" />
           View Screens ({screenshotCount})
         </button>
+      ) : null}
+
+      {!primaryHref && !hasScreenshots ? (
+        <span className="text-sm text-neutral-500 dark:text-neutral-400">
+          Details available on request
+        </span>
       ) : null}
     </div>
   );

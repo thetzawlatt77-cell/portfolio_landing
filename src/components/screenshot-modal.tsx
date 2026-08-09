@@ -4,12 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import type { ProjectMediaType } from "@/types/portfolio";
 
 interface ScreenshotModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
   images: string[];
+  mediaType?: ProjectMediaType;
 }
 
 export function ScreenshotModal({
@@ -17,9 +19,11 @@ export function ScreenshotModal({
   onClose,
   title,
   images,
+  mediaType = "mobile",
 }: ScreenshotModalProps) {
   const reduceMotion = usePrefersReducedMotion();
   const closeRef = useRef<HTMLButtonElement>(null);
+  const isMobileGallery = mediaType === "mobile";
 
   useEffect(() => {
     if (isOpen) {
@@ -82,20 +86,38 @@ export function ScreenshotModal({
               </div>
 
               <div className="flex-1 overflow-y-auto overscroll-contain p-4 sm:p-6">
-                <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+                <div
+                  className={
+                    isMobileGallery
+                      ? "grid grid-cols-2 justify-items-center gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4"
+                      : "grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3"
+                  }
+                >
                   {images.map((src, idx) => (
                     <div
                       key={`${src}-${idx}`}
-                      className="overflow-hidden rounded-2xl border border-white/10 bg-white/50 shadow-lg shadow-indigo-500/10 backdrop-blur dark:bg-neutral-900/60"
+                      className={
+                        isMobileGallery
+                          ? "flex w-full max-w-[180px] items-center justify-center overflow-hidden rounded-[1.35rem] border border-white/10 bg-neutral-950/70 p-1.5 shadow-lg shadow-cyan-500/10 sm:max-w-[200px]"
+                          : "overflow-hidden rounded-2xl border border-white/10 bg-white/50 shadow-lg shadow-indigo-500/10 backdrop-blur dark:bg-neutral-900/60"
+                      }
                     >
                       <Image
                         src={src}
                         alt={`${title} screenshot ${idx + 1}`}
-                        width={720}
-                        height={1480}
-                        className="h-auto w-full object-contain bg-neutral-950/40"
-                        sizes="(min-width: 1024px) 28vw, (min-width: 640px) 42vw, 90vw"
-                        quality={70}
+                        width={isMobileGallery ? 395 : 1280}
+                        height={isMobileGallery ? 900 : 800}
+                        className={
+                          isMobileGallery
+                            ? "h-auto max-h-[min(62vh,720px)] w-full rounded-[1.1rem] object-contain"
+                            : "h-auto max-h-[min(70vh,820px)] w-full object-contain bg-neutral-950/40"
+                        }
+                        sizes={
+                          isMobileGallery
+                            ? "(min-width: 1024px) 200px, (min-width: 640px) 28vw, 42vw"
+                            : "(min-width: 1024px) 28vw, (min-width: 640px) 42vw, 90vw"
+                        }
+                        quality={75}
                         loading={idx < 3 ? "eager" : "lazy"}
                       />
                     </div>

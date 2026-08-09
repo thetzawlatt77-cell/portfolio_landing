@@ -346,6 +346,7 @@ export function CheersCaseStudy() {
         onClose={() => setGalleryOpen(false)}
         title={`${cheersCaseStudy.title} — ${cheersCaseStudy.screens[activeImageIndex]?.label ?? "Screens"}`}
         images={orderedGalleryImages}
+        mediaType="mobile"
       />
     </div>
   );

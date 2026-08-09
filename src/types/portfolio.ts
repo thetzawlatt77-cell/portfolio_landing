@@ -10,6 +10,15 @@ export type SkillGroup = {
   skills: string[];
 };
 
+/** How the project card should present its preview image. */
+export type ProjectMediaType = "mobile" | "landscape";
+
+/** Card media composition variant (visual polish only). */
+export type ProjectMediaVariant = "single" | "dual" | "featured";
+
+/** Soft media-stage glow keyed to project tone. */
+export type ProjectMediaGlow = "cyan" | "lavender" | "mint" | "cheers" | "neutral";
+
 export type Project = {
   id: string;
   title: string;
@@ -20,6 +29,14 @@ export type Project = {
   description: string;
   stack: string[];
   image: string;
+  /** Preview presentation: phone frame for mobile apps, window frame for web/landscape. */
+  mediaType: ProjectMediaType;
+  /** Visual composition for the media stage. */
+  mediaVariant?: ProjectMediaVariant;
+  /** Soft glow palette for the media stage. */
+  mediaGlow?: ProjectMediaGlow;
+  /** Optional second real screenshot for dual/featured compositions. */
+  secondaryImage?: string;
   /** Short role/type line, e.g. "Personal project" or "Client Contract Project". */
   role?: string;
   /** Project engagement type for featured cards. */
