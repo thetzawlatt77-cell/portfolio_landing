@@ -305,8 +305,8 @@ export const contact: ContactItem[] = [
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/thet-zaw-la-966580253",
-    href: "https://www.linkedin.com/in/thet-zaw-la-966580253",
+    value: "linkedin.com/in/thet-zaw-latt-57b848412",
+    href: "https://www.linkedin.com/in/thet-zaw-latt-57b848412/",
     external: true,
   },
   {
