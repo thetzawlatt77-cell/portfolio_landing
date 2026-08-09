@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 interface ScreenshotModalProps {
   isOpen: boolean;
@@ -17,9 +18,13 @@ export function ScreenshotModal({
   title,
   images,
 }: ScreenshotModalProps) {
+  const reduceMotion = usePrefersReducedMotion();
+  const closeRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      closeRef.current?.focus();
     } else {
       document.body.style.overflow = "unset";
     }
@@ -42,63 +47,63 @@ export function ScreenshotModal({
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={reduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={reduceMotion ? undefined : { opacity: 0 }}
             onClick={onClose}
             className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
+            aria-hidden="true"
           />
-          {/* Modal */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              role="dialog"
+              aria-modal="true"
+              aria-label={title}
+              initial={reduceMotion ? false : { opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              exit={reduceMotion ? undefined : { opacity: 0, scale: 0.95, y: 20 }}
               onClick={(e) => e.stopPropagation()}
               className="relative flex max-h-[90vh] w-full max-w-6xl flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/95 shadow-2xl dark:bg-neutral-900/95"
             >
-              {/* Header */}
-              <div className="flex items-center justify-between border-b border-neutral-200/50 p-6 dark:border-neutral-800/50">
-                <h2 className="text-2xl font-semibold text-neutral-900 dark:text-white">
+              <div className="flex items-center justify-between gap-3 border-b border-neutral-200/50 p-4 sm:p-6 dark:border-neutral-800/50">
+                <h2 className="min-w-0 truncate text-lg font-semibold text-neutral-900 dark:text-white sm:text-2xl">
                   {title}
                 </h2>
                 <button
+                  ref={closeRef}
+                  type="button"
                   onClick={onClose}
-                  className="rounded-full p-2 text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-white"
-                  aria-label="Close modal"
+                  className="rounded-full p-2 text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:hover:bg-neutral-800 dark:hover:text-white"
+                  aria-label="Close screenshot gallery"
                 >
                   <CloseIcon className="h-6 w-6" />
                 </button>
               </div>
 
-              {/* Images Grid */}
-              <div className="flex-1 overflow-y-auto p-6">
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="flex-1 overflow-y-auto overscroll-contain p-4 sm:p-6">
+                <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
                   {images.map((src, idx) => (
-                    <motion.div
-                      key={src}
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: idx * 0.05 }}
+                    <div
+                      key={`${src}-${idx}`}
                       className="overflow-hidden rounded-2xl border border-white/10 bg-white/50 shadow-lg shadow-indigo-500/10 backdrop-blur dark:bg-neutral-900/60"
                     >
                       <Image
                         src={src}
                         alt={`${title} screenshot ${idx + 1}`}
-                        width={900}
-                        height={1900}
+                        width={720}
+                        height={1480}
                         className="h-auto w-full object-contain bg-neutral-950/40"
-                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        sizes="(min-width: 1024px) 28vw, (min-width: 640px) 42vw, 90vw"
+                        quality={70}
+                        loading={idx < 3 ? "eager" : "lazy"}
                       />
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
 
-              {/* Footer */}
-              <div className="border-t border-neutral-200/50 p-4 text-center text-sm text-neutral-500 dark:border-neutral-800/50 dark:text-neutral-400">
+              <div className="border-t border-neutral-200/50 p-3 text-center text-sm text-neutral-500 dark:border-neutral-800/50 dark:text-neutral-400 sm:p-4">
                 {images.length} screenshot{images.length !== 1 ? "s" : ""}
               </div>
             </motion.div>
@@ -117,6 +122,7 @@ function CloseIcon({ className }: { className?: string }) {
       viewBox="0 0 24 24"
       stroke="currentColor"
       strokeWidth={2}
+      aria-hidden="true"
     >
       <path
         strokeLinecap="round"
@@ -126,4 +132,3 @@ function CloseIcon({ className }: { className?: string }) {
     </svg>
   );
 }
-

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 // Simple in-memory store (in production, use a database like Vercel KV, Supabase, etc.)
 let viewCount = 0;

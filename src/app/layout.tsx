@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const siteTitle = "Thet Zaw Latt | Flutter Developer Portfolio";
+const siteTitle = "Thet Zaw Latt | Senior Flutter Developer";
 const siteDescription =
-  "Experienced Flutter developer with 5+ years crafting polished Android and iOS apps, strong UI/UX, and publishing across major stores.";
+  "Senior Flutter Developer based in Da Nang, Vietnam with 5+ years of experience building production mobile applications across fintech, real-time systems, marketplaces, streaming, and consumer products.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://example.com"),
@@ -30,14 +30,19 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Thet Zaw Latt",
+    "Senior Flutter Developer",
     "Flutter developer",
-    "Mobile developer",
+    "Mobile engineer",
+    "Senior Mobile Engineer",
     "Android",
     "iOS",
-    "Figma",
-    "UI/UX",
     "Dart",
+    "Firebase",
     "Flutter portfolio",
+    "Da Nang",
+    "Ho Chi Minh City",
+    "Hanoi",
+    "Vietnam",
   ],
   openGraph: {
     title: siteTitle,
@@ -51,7 +56,7 @@ export const metadata: Metadata = {
         url: "/pp.png",
         width: 1200,
         height: 1200,
-        alt: "Thet Zaw Latt",
+        alt: "Thet Zaw Latt, Senior Flutter Developer",
       },
     ],
   },
@@ -59,7 +64,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    creator: "@",
     images: ["/pp.png"],
   },
 };
@@ -71,6 +75,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme")||"dark";var r=document.documentElement;r.classList.toggle("dark",t==="dark");r.style.colorScheme=t;}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-neutral-50 text-neutral-900 antialiased transition-colors duration-300 dark:bg-neutral-950 dark:text-neutral-100`}
       >
