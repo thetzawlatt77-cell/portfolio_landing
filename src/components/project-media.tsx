@@ -289,6 +289,34 @@ function DualDeviceComposition({
   );
 }
 
+/** Minimal CSS phone frame — shared by Projects and case study screens. */
+export function PhoneDeviceFrame({
+  src,
+  alt,
+  size = "card",
+  priority = false,
+  layer = "primary",
+  className = "",
+}: {
+  src: string;
+  alt: string;
+  size?: "card" | "featured";
+  priority?: boolean;
+  layer?: "primary" | "secondary";
+  className?: string;
+}) {
+  return (
+    <DeviceFrame
+      src={src}
+      alt={alt}
+      size={size}
+      priority={priority}
+      layer={layer}
+      className={className}
+    />
+  );
+}
+
 function DeviceFrame({
   src,
   alt,

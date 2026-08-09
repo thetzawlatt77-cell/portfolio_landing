@@ -22,7 +22,8 @@ export const cheersCaseStudy = {
   badge: "Client Contract Project",
   overview:
     "A Flutter rebuild of an existing MVP focused on real-time collaboration, shared planning, budgeting, task management, and a polished mobile experience.",
-  coverImage: "/projects/cheers/cover.jpg",
+  coverImage: "/projects/cheers/screens/home.jpg",
+  secondaryCoverImage: "/projects/cheers/screens/profile.jpg",
   meta: {
     role: "Senior Flutter Developer / Full Product Implementation",
     platform: "iOS & Android",

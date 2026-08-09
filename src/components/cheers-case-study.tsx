@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { cheersCaseStudy } from "@/data/cheers-case-study";
+import { PhoneDeviceFrame, ProjectMedia } from "@/components/project-media";
 import { SectionHeading } from "@/components/section-heading";
 import { ScreenshotModal } from "@/components/screenshot-modal";
 
@@ -52,29 +52,30 @@ export function CheersCaseStudy() {
               })}
           className="glass relative overflow-hidden rounded-3xl"
         >
-          <div className="pointer-events-none absolute inset-0 opacity-70" aria-hidden="true">
-            <div className="absolute -left-16 top-0 h-48 w-48 rounded-full bg-indigo-500/20 blur-3xl" />
-            <div className="absolute -right-10 bottom-0 h-48 w-48 rounded-full bg-emerald-400/15 blur-3xl" />
+          <div className="pointer-events-none absolute inset-0 opacity-80" aria-hidden="true">
+            <div className="absolute -left-16 top-0 h-52 w-52 rounded-full bg-violet-400/18 blur-3xl" />
+            <div className="absolute -right-10 bottom-0 h-52 w-52 rounded-full bg-emerald-400/16 blur-3xl" />
+            <div className="absolute left-1/3 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-white/20 blur-3xl dark:bg-white/8" />
           </div>
 
-          <div className="relative grid gap-0 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
-            <div className="relative min-h-[280px] overflow-hidden bg-neutral-100 dark:bg-neutral-800 sm:min-h-[360px]">
-              <Image
+          <div className="relative grid gap-0 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)]">
+            <div className="relative order-2 border-t border-white/10 lg:order-1 lg:border-r lg:border-t-0 lg:border-white/10 dark:border-white/5">
+              <ProjectMedia
                 src={cheersCaseStudy.coverImage}
-                alt="Cheers! app home screen preview"
-                fill
+                alt="Cheers! home screen"
+                mediaType="mobile"
+                variant="featured"
+                glow="cheers"
+                secondarySrc={cheersCaseStudy.secondaryCoverImage}
+                secondaryAlt="Cheers! profile screen"
+                size="featured"
                 priority
-                className="object-cover object-top"
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                quality={75}
-              />
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"
-                aria-hidden="true"
+                reduceMotion={!!reduceMotion}
+                onOpenGallery={() => openGallery(0)}
               />
             </div>
 
-            <div className="relative flex flex-col gap-5 p-6 sm:p-8 lg:p-10">
+            <div className="relative order-1 flex flex-col gap-5 p-6 sm:p-8 lg:order-2 lg:p-10">
               <span className="inline-flex w-fit items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">
                 {cheersCaseStudy.badge}
               </span>
@@ -251,30 +252,42 @@ export function CheersCaseStudy() {
           title="Selected Screens"
           description="Real product screenshots from the delivered Cheers experience."
         />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {cheersCaseStudy.screens.map((screen, idx) => (
             <motion.button
               key={screen.src}
               type="button"
               {...fade(Math.min(idx * 0.03, 0.12))}
               onClick={() => openGallery(idx)}
-              className={`group overflow-hidden rounded-3xl border border-white/10 bg-white/50 text-left shadow-lg shadow-indigo-500/10 backdrop-blur transition hover:-translate-y-0.5 dark:bg-neutral-900/60 ${focusRing}`}
+              className={`group overflow-hidden rounded-3xl border border-white/10 bg-white/50 text-left shadow-lg shadow-cyan-500/10 backdrop-blur transition hover:-translate-y-0.5 dark:bg-neutral-900/60 ${focusRing}`}
               aria-label={`Enlarge ${screen.label} screenshot`}
             >
-              <div className="relative aspect-[9/16] overflow-hidden bg-neutral-950/40">
-                <Image
-                  src={screen.src}
-                  alt={screen.alt}
-                  fill
-                  className={`object-contain ${
-                    reduceMotion ? "" : "transition duration-500 group-hover:scale-[1.02]"
-                  }`}
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  quality={70}
-                  loading={idx < 2 ? "eager" : "lazy"}
+              <div className="relative flex min-h-[320px] items-center justify-center overflow-hidden px-4 py-6 sm:min-h-[340px]">
+                <div
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-violet-300/14 via-cyan-300/10 to-emerald-300/14 dark:from-violet-400/12 dark:via-cyan-400/8 dark:to-emerald-400/10"
+                  aria-hidden="true"
                 />
+                <div
+                  className="pointer-events-none absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/20 blur-3xl dark:bg-cyan-400/14"
+                  aria-hidden="true"
+                />
+                <div
+                  className={`relative z-[1] w-[clamp(118px,58%,148px)] ${
+                    reduceMotion
+                      ? ""
+                      : "transition duration-300 group-hover:-translate-y-1"
+                  }`}
+                >
+                  <PhoneDeviceFrame
+                    src={screen.src}
+                    alt={screen.alt}
+                    size="card"
+                    priority={idx < 2}
+                    className="!w-full"
+                  />
+                </div>
               </div>
-              <div className="px-4 py-3">
+              <div className="relative border-t border-white/10 px-4 py-3 dark:border-white/5">
                 <p className="text-sm font-semibold text-neutral-900 dark:text-white">
                   {screen.label}
                 </p>
