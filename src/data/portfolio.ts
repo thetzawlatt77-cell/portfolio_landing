@@ -274,16 +274,6 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    role: "Senior Flutter Developer",
-    company: "Win Corker",
-    period: "10/2023 – 12/2023",
-    bullets: [
-      "Developed real-time messaging functionality.",
-      "Managed complex application state for synchronized chat experiences.",
-      "Collaborated with UI/UX, backend, and QA teams.",
-    ],
-  },
-  {
     role: "Flutter Developer",
     company: "Etrade Myanmar",
     period: "06/2023 – 09/2023",
