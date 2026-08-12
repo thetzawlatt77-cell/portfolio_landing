@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* ThemeProvider toggles `.dark` on <html>; make every Tailwind dark variant
+   follow that explicit preference instead of the operating-system setting. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   color-scheme: light;
   --background: #f4f1ea;
