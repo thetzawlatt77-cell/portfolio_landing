@@ -43,7 +43,7 @@ export function Hero() {
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-4 border-white/50 shadow-xl ring-4 ring-indigo-500/20 dark:border-neutral-800/50 sm:h-32 sm:w-32">
                 <Image
                   src="/pp.png"
-                  alt="Portrait of Thet Zaw Latt, Senior Flutter Developer"
+                  alt="Portrait of Thet Zaw Latt, Senior Flutter Developer and Product Engineer"
                   fill
                   className="object-cover"
                   sizes="128px"
@@ -71,6 +71,13 @@ export function Hero() {
             >
               {hero.name}
             </motion.h1>
+
+            <motion.p
+              {...fade(0.08, 16)}
+              className="max-w-2xl text-balance text-xl font-medium tracking-tight text-indigo-700 dark:text-indigo-200 sm:text-2xl"
+            >
+              {hero.title}
+            </motion.p>
 
             <motion.div {...fade(0.1, 18)} className="max-w-2xl space-y-3">
               <p className="text-base leading-relaxed text-neutral-800 dark:text-neutral-100 sm:text-lg">
@@ -102,12 +109,6 @@ export function Hero() {
               >
                 Download CV
               </Link>
-              <Link
-                href="/#contact"
-                className={`text-sm font-medium text-neutral-600 underline decoration-neutral-400/60 underline-offset-4 transition hover:text-neutral-900 hover:decoration-indigo-400 dark:text-neutral-300 dark:hover:text-white ${focusRing} rounded-sm`}
-              >
-                Contact Me
-              </Link>
             </motion.div>
           </div>
 
@@ -119,13 +120,13 @@ export function Hero() {
                   animate: { opacity: 1, scale: 1 },
                   transition: { duration: 0.45, delay: 0.12 },
                 })}
-            className="grid w-full gap-4 sm:grid-cols-2 lg:max-w-md lg:shrink-0"
+            className="grid w-full gap-3 sm:grid-cols-2 lg:max-w-md lg:shrink-0"
             aria-label="Core capabilities"
           >
             {hero.highlights.map((item) => (
               <div
                 key={item.label}
-                className="glass relative overflow-hidden rounded-2xl p-4 text-sm text-neutral-800 shadow-lg dark:text-neutral-50"
+                className="relative overflow-hidden rounded-2xl border border-neutral-900/8 bg-white/55 p-4 text-sm text-neutral-800 shadow-[0_16px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/6 dark:text-neutral-50"
               >
                 <div
                   className="absolute right-3 top-3 h-10 w-10 rounded-full bg-gradient-to-br from-indigo-500/70 to-sky-400/80 blur-2xl"

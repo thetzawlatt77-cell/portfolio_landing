@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const siteTitle = "Thet Zaw Latt | Senior Flutter Developer";
+const siteTitle = "Thet Zaw Latt | Senior Flutter Developer & Product Engineer";
 const siteDescription =
-  "Senior Flutter Developer based in Da Nang, Vietnam with 5+ years of experience building production mobile applications across fintech, real-time systems, marketplaces, streaming, and consumer products.";
+  "Senior Flutter Developer and Product Engineer based in Da Nang, Vietnam, building production mobile apps and focused full-stack products with Flutter, Next.js, Supabase, Firebase, APIs, and AI.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://portfolio-tzl.vercel.app"),
   title: siteTitle,
   description: siteDescription,
   icons: {
@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "Flutter developer",
     "Mobile engineer",
     "Senior Mobile Engineer",
+    "Product Engineer",
+    "Next.js developer",
+    "Supabase developer",
     "Android",
     "iOS",
     "Dart",
@@ -49,14 +52,14 @@ export const metadata: Metadata = {
     description: siteDescription,
     type: "website",
     locale: "en_US",
-    url: "https://example.com",
+    url: "https://portfolio-tzl.vercel.app",
     siteName: "Thet Zaw Latt Portfolio",
     images: [
       {
         url: "/pp.png",
         width: 1200,
         height: 1200,
-        alt: "Thet Zaw Latt, Senior Flutter Developer",
+        alt: "Thet Zaw Latt, Senior Flutter Developer and Product Engineer",
       },
     ],
   },

@@ -22,8 +22,8 @@ export function Contact() {
     <section id="contact" className="space-y-6">
       <SectionHeading
         eyebrow="Contact"
-        title="Let's build something great"
-        description="Open to Senior Flutter / mobile engineering roles in Da Nang, HCMC, Hanoi, and remote Vietnam, plus selected contract projects."
+        title="Let’s build a product that ships"
+        description="Open to senior Flutter and mobile roles, product engineering opportunities, and selected contract projects in Vietnam or remotely."
       />
 
       <p className="text-sm text-neutral-500 dark:text-neutral-400">

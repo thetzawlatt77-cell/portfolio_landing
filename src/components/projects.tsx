@@ -37,7 +37,7 @@ export function Projects() {
       <SectionHeading
         eyebrow="Projects"
         title="Selected product work"
-        description="Contract delivery, full-stack product builds, and mobile engineering—led by Cheers!, TripMate, and Dear You."
+        description="Production mobile work and end-to-end product builds, with clear ownership across engineering, interaction design, and delivery."
       />
 
       {featuredProjects.length > 0 ? (
@@ -194,8 +194,7 @@ function FeaturedProjectCard({
       </div>
 
       <div className="relative grid gap-0 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)]">
-        {/* On mobile: content first, media second */}
-        <div className="relative order-2 border-t border-white/10 lg:order-1 lg:border-r lg:border-t-0 lg:border-white/10 dark:border-white/5">
+        <div className="relative order-1 border-b border-white/10 lg:border-b-0 lg:border-r lg:border-white/10 dark:border-white/5">
           <ProjectMedia
             src={project.image}
             alt={`${project.title} home screen`}
@@ -211,7 +210,7 @@ function FeaturedProjectCard({
           />
         </div>
 
-        <div className="relative order-1 flex flex-col gap-4 p-6 sm:p-8 lg:order-2">
+        <div className="relative order-2 flex flex-col gap-4 p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">
               {project.label}

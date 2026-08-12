@@ -46,7 +46,7 @@ export function Navbar() {
         <Link
           href="/#hero"
           className={`flex min-w-0 items-center gap-3 rounded-full ${focusRing}`}
-          aria-label="Thet Zaw Latt — Senior Flutter Developer, go to About"
+          aria-label="Thet Zaw Latt — Senior Flutter Developer and Product Engineer, go to About"
           onClick={() => setMobileOpen(false)}
         >
           <span
@@ -57,7 +57,7 @@ export function Navbar() {
           </span>
           <div className="hidden min-w-0 sm:block">
             <p className="truncate text-xs uppercase tracking-[0.2em] text-neutral-600 dark:text-neutral-300">
-              Senior Flutter Developer
+              Flutter · Product Engineering
             </p>
             <p className="truncate text-sm font-semibold text-neutral-900 dark:text-white">
               Thet Zaw Latt

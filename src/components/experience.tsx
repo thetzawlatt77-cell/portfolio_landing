@@ -12,8 +12,8 @@ export function Experience() {
     <section id="experience" className="space-y-6">
       <SectionHeading
         eyebrow="Experience"
-        title="Professional Flutter delivery"
-        description="Contract and full-time Flutter work across fintech, marketplaces, messaging, streaming, and enterprise products."
+        title="Built through real delivery"
+        description="More than five years shipping mobile products across fintech, marketplaces, streaming, internal tools, and client-led builds."
       />
       <div className="relative space-y-4 border-l border-neutral-200/70 pl-5 dark:border-neutral-800 sm:pl-6">
         {experiences.map((exp, idx) => (

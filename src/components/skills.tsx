@@ -2,11 +2,7 @@
 
 import { motion } from "framer-motion";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
-import {
-  additionalSkills,
-  productivityTools,
-  skillGroups,
-} from "@/data/portfolio";
+import { skillGroups } from "@/data/portfolio";
 import { SectionHeading } from "./section-heading";
 
 export function Skills() {
@@ -16,8 +12,8 @@ export function Skills() {
     <section id="skills" className="space-y-6">
       <SectionHeading
         eyebrow="Skills"
-        title="Core mobile engineering capabilities"
-        description="Production Flutter expertise across architecture, integrations, testing, performance, and app delivery."
+        title="Mobile depth, product breadth"
+        description="Senior Flutter delivery backed by the full-stack skills needed to take focused product ideas from concept to a working release."
       />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -58,18 +54,6 @@ export function Skills() {
             </ul>
           </motion.article>
         ))}
-      </div>
-
-      <div className="space-y-1 px-1 text-xs text-neutral-500 dark:text-neutral-400">
-        <p>
-          <span className="font-medium text-neutral-600 dark:text-neutral-300">
-            Additional experience:
-          </span>{" "}
-          {additionalSkills.join(" · ")}
-        </p>
-        <p className="text-neutral-400 dark:text-neutral-500">
-          Productivity tools: {productivityTools.join(", ")}
-        </p>
       </div>
     </section>
   );

@@ -8,21 +8,21 @@ import {
 
 export const hero = {
   name: "Thet Zaw Latt",
-  title: "Senior Flutter Developer",
-  eyebrow: "Senior Flutter Developer • 5+ Years",
+  title: "Senior Flutter Developer & Product Engineer",
+  eyebrow: "Mobile-first product builder • 5+ years",
   description:
-    "5+ years building and shipping production Flutter apps for iOS and Android across fintech, real-time systems, marketplaces, streaming, and consumer products.",
+    "I build production mobile apps and turn product ideas into polished, working experiences—from Flutter clients to AI-assisted web products.",
   secondaryDescription:
-    "Focused on Flutter/Dart, Firebase and API integration, scalable application architecture, polished UI implementation, performance optimization, and store-ready delivery.",
+    "My core strength is Flutter delivery, supported by hands-on product engineering with Next.js, Supabase, Firebase, APIs, and AI workflows.",
   location:
-    "Based in Da Nang, Vietnam • Open to Da Nang, HCMC, Hanoi, and remote Vietnam Flutter roles",
+    "Based in Da Nang, Vietnam • Open to senior mobile roles, product engineering opportunities, and selected contract work",
   highlights: [
-    { label: "Mobile", value: "Flutter • iOS • Android" },
-    { label: "Delivery", value: "App Store • Google Play • TestFlight" },
-    { label: "Architecture", value: "Riverpod • Firebase • APIs" },
+    { label: "Mobile", value: "Flutter · iOS · Android" },
+    { label: "Product", value: "Next.js · Supabase · AI" },
+    { label: "Systems", value: "Riverpod · Firebase · APIs" },
     {
-      label: "Quality",
-      value: "Testing • Debugging • Production Delivery",
+      label: "Delivery",
+      value: "Architecture · Testing · Release",
     },
   ],
 };
@@ -58,6 +58,18 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
+    title: "Product & Web",
+    icon: "PW",
+    skills: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "Responsive Web",
+      "AI Workflows",
+      "Product UX",
+    ],
+  },
+  {
     title: "Quality & Performance",
     icon: "QP",
     skills: [
@@ -81,11 +93,6 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
 ];
-
-/** Secondary / earlier-stack experience — not primary hiring signals. */
-export const additionalSkills = ["PHP", "MSSQL", "SQL", "HTML5", "CSS", "Ionic"];
-
-export const productivityTools = ["Cursor", "ChatGPT"];
 
 export const projects: Project[] = [
   {
