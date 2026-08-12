@@ -178,36 +178,6 @@ export const projects: Project[] = [
     caseStudyHref: "/projects/dear-you",
   },
   {
-    id: "soccer-score",
-    title: "Soccer Score",
-    date: "Oct 2024",
-    label: "Real-time Mobile App",
-    role: "Personal project",
-    mediaType: "mobile",
-    mediaVariant: "single",
-    mediaGlow: "cyan",
-    description:
-      "Live football score app with multi-language support and API-driven score refresh for iOS and Android.",
-    stack: ["Flutter", "REST APIs", "Internationalization", "State Management"],
-    repoUrl: "https://github.com/Erihmar1259/soccer_score",
-    image: "/projects/soccer-score.svg",
-  },
-  {
-    id: "sport-fm",
-    title: "Sport FM Radio App",
-    date: "Sep 2024",
-    label: "Audio Streaming",
-    role: "Personal project",
-    mediaType: "mobile",
-    mediaVariant: "single",
-    mediaGlow: "lavender",
-    description:
-      "Sports FM radio streaming app focused on reliable playback, clean architecture, and a lightweight listening experience.",
-    stack: ["Flutter", "Audio Streaming", "Clean Architecture"],
-    repoUrl: "https://github.com/Erihmar1259/sport_fm_radio",
-    image: "/projects/sport-fm.svg",
-  },
-  {
     id: "sway-yeik-pon",
     title: "SwayYeikPon",
     date: "11/2025",
@@ -240,21 +210,6 @@ export const projects: Project[] = [
     image: "/gallery/quiz-rush/Screenshot_20251210_154603.png",
     secondaryImage: "/gallery/quiz-rush/Screenshot_20251210_154633.png",
     gallerySlug: "quiz-rush",
-  },
-  {
-    id: "four-in-a-row",
-    title: "Four in a Row – Sport Style",
-    date: "Aug 2024",
-    label: "Custom UI",
-    role: "Personal project",
-    mediaType: "mobile",
-    mediaVariant: "single",
-    mediaGlow: "neutral",
-    description:
-      "Sport-inspired Connect Four game with single and two-player modes and custom Flutter animations.",
-    stack: ["Flutter", "Custom UI", "Animations"],
-    repoUrl: "https://github.com/Erihmar1259/four_in_a_row",
-    image: "/projects/four-in-a-row.svg",
   },
 ];
 

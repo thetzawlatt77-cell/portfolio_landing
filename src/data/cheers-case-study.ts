@@ -147,8 +147,8 @@ export const cheersCaseStudy = {
     body: "Successfully completed and delivered as a client contract project, covering the core Flutter product experience, Firebase integrations, collaborative workflows, business logic, and testing.",
   },
   nextProject: {
-    title: "Soccer Score",
-    href: "/#projects",
-    description: "Real-time mobile score app",
+    title: "TripMate",
+    href: "/projects/tripmate",
+    description: "AI-assisted travel planning product",
   },
 } as const;
