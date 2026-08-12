@@ -8,7 +8,7 @@ import type {
 } from "@/types/portfolio";
 
 const focusRing =
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500";
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500";
 
 type ProjectMediaProps = {
   src: string;
@@ -136,34 +136,34 @@ function MediaAtmosphere({
     { wash: string; a: string; b: string; c: string }
   > = {
     cyan: {
-      wash: "from-cyan-400/18 via-sky-300/10 to-blue-400/12 dark:from-cyan-400/14 dark:via-sky-400/8 dark:to-blue-500/10",
-      a: "bg-cyan-300/25 dark:bg-cyan-400/18",
-      b: "bg-sky-300/18 dark:bg-sky-400/12",
-      c: "bg-blue-300/14 dark:bg-blue-400/10",
+      wash: "from-orange-300/16 via-amber-100/10 to-stone-200/12 dark:from-orange-500/10 dark:via-amber-700/5 dark:to-stone-700/8",
+      a: "bg-orange-300/20 dark:bg-orange-500/12",
+      b: "bg-amber-200/16 dark:bg-amber-700/7",
+      c: "bg-stone-200/14 dark:bg-stone-600/8",
     },
     lavender: {
-      wash: "from-violet-400/16 via-sky-300/10 to-cyan-300/12 dark:from-violet-400/12 dark:via-sky-400/8 dark:to-cyan-400/10",
-      a: "bg-violet-300/22 dark:bg-violet-400/16",
-      b: "bg-sky-300/16 dark:bg-sky-400/12",
-      c: "bg-cyan-300/12 dark:bg-cyan-400/10",
+      wash: "from-rose-200/16 via-orange-100/10 to-stone-200/12 dark:from-rose-700/8 dark:via-orange-700/5 dark:to-stone-700/8",
+      a: "bg-rose-200/20 dark:bg-rose-700/9",
+      b: "bg-orange-200/16 dark:bg-orange-700/7",
+      c: "bg-stone-200/14 dark:bg-stone-600/8",
     },
     mint: {
-      wash: "from-emerald-300/16 via-cyan-300/10 to-violet-300/12 dark:from-emerald-400/12 dark:via-cyan-400/8 dark:to-violet-400/10",
-      a: "bg-emerald-300/22 dark:bg-emerald-400/14",
-      b: "bg-cyan-300/16 dark:bg-cyan-400/12",
-      c: "bg-violet-300/14 dark:bg-violet-400/10",
+      wash: "from-amber-200/16 via-orange-100/10 to-stone-200/12 dark:from-amber-700/8 dark:via-orange-700/5 dark:to-stone-700/8",
+      a: "bg-amber-200/20 dark:bg-amber-700/9",
+      b: "bg-orange-200/16 dark:bg-orange-700/7",
+      c: "bg-stone-200/14 dark:bg-stone-600/8",
     },
     cheers: {
-      wash: "from-violet-300/14 via-white/20 to-emerald-300/14 dark:from-violet-400/12 dark:via-white/5 dark:to-emerald-400/12",
-      a: "bg-violet-300/20 dark:bg-violet-400/14",
-      b: "bg-emerald-300/18 dark:bg-emerald-400/12",
+      wash: "from-orange-200/14 via-white/20 to-amber-200/14 dark:from-orange-700/8 dark:via-white/4 dark:to-amber-700/7",
+      a: "bg-orange-200/20 dark:bg-orange-700/9",
+      b: "bg-amber-200/18 dark:bg-amber-700/8",
       c: "bg-white/25 dark:bg-white/10",
     },
     neutral: {
-      wash: "from-cyan-400/12 via-emerald-300/8 to-violet-300/10 dark:from-cyan-400/10 dark:via-emerald-400/6 dark:to-violet-400/8",
-      a: "bg-cyan-300/18 dark:bg-cyan-400/12",
-      b: "bg-emerald-300/14 dark:bg-emerald-400/10",
-      c: "bg-violet-300/12 dark:bg-violet-400/8",
+      wash: "from-stone-200/16 via-orange-100/8 to-amber-100/10 dark:from-stone-700/9 dark:via-orange-800/4 dark:to-amber-800/5",
+      a: "bg-stone-200/18 dark:bg-stone-700/10",
+      b: "bg-orange-200/12 dark:bg-orange-700/6",
+      c: "bg-amber-200/10 dark:bg-amber-700/5",
     },
   };
 

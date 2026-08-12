@@ -80,7 +80,7 @@ export function ScreenshotModal({
                   ref={closeRef}
                   type="button"
                   onClick={onClose}
-                  className="rounded-full p-2 text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:hover:bg-neutral-800 dark:hover:text-white"
+                  className="rounded-full p-2 text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 dark:hover:bg-neutral-800 dark:hover:text-white"
                   aria-label="Close screenshot gallery"
                 >
                   <CloseIcon className="h-6 w-6" />

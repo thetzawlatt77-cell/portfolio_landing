@@ -10,7 +10,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { ScreenshotModal } from "@/components/screenshot-modal";
 
 const focusRing =
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500";
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500";
 
 export function CheersCaseStudy() {
   const reduceMotion = usePrefersReducedMotion();
@@ -53,8 +53,8 @@ export function CheersCaseStudy() {
           className="glass relative overflow-hidden rounded-3xl"
         >
           <div className="pointer-events-none absolute inset-0 opacity-80" aria-hidden="true">
-            <div className="absolute -left-16 top-0 h-52 w-52 rounded-full bg-violet-400/18 blur-3xl" />
-            <div className="absolute -right-10 bottom-0 h-52 w-52 rounded-full bg-emerald-400/16 blur-3xl" />
+            <div className="absolute -right-10 top-0 h-56 w-56 rounded-full bg-orange-400/14 blur-3xl" />
+            <div className="absolute -left-10 bottom-0 h-48 w-48 rounded-full bg-amber-200/12 blur-3xl" />
             <div className="absolute left-1/3 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-white/20 blur-3xl dark:bg-white/8" />
           </div>
 
@@ -76,7 +76,7 @@ export function CheersCaseStudy() {
             </div>
 
             <div className="relative order-1 flex flex-col gap-5 p-6 sm:p-8 lg:order-2 lg:p-10">
-              <span className="inline-flex w-fit items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">
+              <span className="accent-badge inline-flex w-fit items-center rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
                 {cheersCaseStudy.badge}
               </span>
               <div>
@@ -150,7 +150,7 @@ export function CheersCaseStudy() {
             >
               <div className="flex items-center gap-3">
                 <div
-                  className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-indigo-500/80 to-sky-400/80 text-xs font-semibold text-white shadow-lg"
+                  className="accent-icon grid h-10 w-10 shrink-0 place-items-center rounded-full text-xs font-semibold text-white"
                   aria-hidden="true"
                 >
                   {item.title.slice(0, 2).toUpperCase()}
@@ -205,7 +205,7 @@ export function CheersCaseStudy() {
                 className="flex items-start gap-3 text-sm text-neutral-700 dark:text-neutral-200"
               >
                 <span
-                  className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400"
+                  className="accent-dot mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full"
                   aria-hidden="true"
                 />
                 <span>{bullet}</span>
@@ -259,16 +259,16 @@ export function CheersCaseStudy() {
               type="button"
               {...fade(Math.min(idx * 0.03, 0.12))}
               onClick={() => openGallery(idx)}
-              className={`group overflow-hidden rounded-3xl border border-white/10 bg-white/50 text-left shadow-lg shadow-cyan-500/10 backdrop-blur transition hover:-translate-y-0.5 dark:bg-neutral-900/60 ${focusRing}`}
+              className={`group overflow-hidden rounded-3xl border border-neutral-900/10 bg-[#fffdf9]/70 text-left shadow-[0_16px_42px_rgba(35,28,21,0.08)] backdrop-blur transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-[#191715]/70 ${focusRing}`}
               aria-label={`Enlarge ${screen.label} screenshot`}
             >
               <div className="relative flex min-h-[320px] items-center justify-center overflow-hidden px-4 py-6 sm:min-h-[340px]">
                 <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-violet-300/14 via-cyan-300/10 to-emerald-300/14 dark:from-violet-400/12 dark:via-cyan-400/8 dark:to-emerald-400/10"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-orange-200/14 via-amber-100/8 to-stone-200/12 dark:from-orange-700/8 dark:via-amber-800/4 dark:to-stone-700/7"
                   aria-hidden="true"
                 />
                 <div
-                  className="pointer-events-none absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/20 blur-3xl dark:bg-cyan-400/14"
+                  className="pointer-events-none absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-300/16 blur-3xl dark:bg-orange-700/8"
                   aria-hidden="true"
                 />
                 <div
@@ -312,7 +312,7 @@ export function CheersCaseStudy() {
             >
               <div className="flex items-center gap-3">
                 <span
-                  className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_6px_rgba(52,211,153,0.12)]"
+                  className="accent-dot h-2 w-2 rounded-full shadow-[0_0_0_6px_var(--accent-soft)]"
                   aria-hidden="true"
                 />
                 {item}

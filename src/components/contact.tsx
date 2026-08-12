@@ -11,7 +11,7 @@ import {
 import { SectionHeading } from "./section-heading";
 
 const focusRing =
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500";
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500";
 
 export function Contact() {
   const reduceMotion = usePrefersReducedMotion();
@@ -33,7 +33,7 @@ export function Contact() {
       <div className="flex flex-wrap items-center gap-3">
         <Link
           href={contactEmail}
-          className={`inline-flex items-center gap-2 rounded-full bg-neutral-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:-translate-y-0.5 hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 ${focusRing}`}
+          className={`accent-shadow inline-flex items-center gap-2 rounded-full bg-neutral-950 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-orange-600 dark:bg-[#f3f0e9] dark:text-neutral-950 dark:hover:bg-orange-400 ${focusRing}`}
         >
           Email Me
         </Link>

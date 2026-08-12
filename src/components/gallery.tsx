@@ -35,7 +35,7 @@ export function Gallery() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.25, delay: Math.min(idx * 0.03, 0.15) }}
-                className={`overflow-hidden rounded-2xl border border-white/10 bg-white/50 shadow-lg shadow-indigo-500/10 backdrop-blur dark:bg-neutral-900/60 ${
+                className={`overflow-hidden rounded-2xl border border-neutral-900/10 bg-[#fffdf9]/70 shadow-[0_16px_42px_rgba(35,28,21,0.08)] backdrop-blur dark:border-white/10 dark:bg-[#191715]/70 ${
                   isPortrait ? "mx-auto w-full max-w-[240px]" : ""
                 }`}
                 >

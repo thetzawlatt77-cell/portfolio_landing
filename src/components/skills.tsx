@@ -32,7 +32,7 @@ export function Skills() {
           >
             <div className="flex items-center gap-3">
               <div
-                className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-indigo-500/80 to-sky-400/80 text-xs font-semibold text-white shadow-lg"
+                className="accent-icon grid h-10 w-10 shrink-0 place-items-center rounded-full text-xs font-semibold text-white"
                 aria-hidden="true"
               >
                 {group.icon}

@@ -7,7 +7,7 @@ import Link from "next/link";
 import { hero } from "@/data/portfolio";
 
 const focusRing =
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500";
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500";
 
 export function Hero() {
   const reduceMotion = usePrefersReducedMotion();
@@ -23,10 +23,9 @@ export function Hero() {
 
   return (
     <section id="hero" className="pt-6 sm:pt-10" aria-labelledby="hero-name">
-      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/70 via-white/40 to-white/20 p-5 shadow-lg shadow-indigo-500/10 dark:from-neutral-900/70 dark:via-neutral-900/40 dark:to-neutral-900/30 sm:p-8 md:p-12">
-        <div className="pointer-events-none absolute inset-0 opacity-70 blur-3xl" aria-hidden="true">
-          <div className="absolute -left-24 -top-10 h-60 w-60 rounded-full bg-indigo-500/30" />
-          <div className="absolute -bottom-14 right-0 h-60 w-60 rounded-full bg-emerald-400/25" />
+      <div className="relative overflow-hidden rounded-3xl border border-neutral-900/10 bg-[#fffdf9]/82 p-5 shadow-[0_24px_70px_rgba(35,28,21,0.10)] backdrop-blur-xl dark:border-white/10 dark:bg-[#191715]/84 sm:p-8 md:p-12">
+        <div className="pointer-events-none absolute inset-0 opacity-80 blur-3xl" aria-hidden="true">
+          <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full bg-orange-400/18 dark:bg-orange-500/12" />
         </div>
         <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
           <div className="min-w-0 flex-1 space-y-5 sm:space-y-6">
@@ -40,7 +39,7 @@ export function Hero() {
                   })}
               className="flex items-center gap-4 sm:gap-6"
             >
-              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-4 border-white/50 shadow-xl ring-4 ring-indigo-500/20 dark:border-neutral-800/50 sm:h-32 sm:w-32">
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-4 border-white/70 shadow-xl ring-4 ring-orange-500/15 dark:border-neutral-800/70 sm:h-32 sm:w-32">
                 <Image
                   src="/pp.png"
                   alt="Portrait of Thet Zaw Latt, Senior Flutter Developer and Product Engineer"
@@ -57,7 +56,7 @@ export function Hero() {
                 >
                   {hero.eyebrow}
                   <span
-                    className="h-2 w-2 shrink-0 rounded-full bg-emerald-400"
+                    className="accent-dot h-2 w-2 shrink-0 rounded-full"
                     aria-hidden="true"
                   />
                 </motion.div>
@@ -74,7 +73,7 @@ export function Hero() {
 
             <motion.p
               {...fade(0.08, 16)}
-              className="max-w-2xl text-balance text-xl font-medium tracking-tight text-indigo-700 dark:text-indigo-200 sm:text-2xl"
+              className="accent-text max-w-2xl text-balance text-xl font-medium tracking-tight sm:text-2xl"
             >
               {hero.title}
             </motion.p>
@@ -97,7 +96,7 @@ export function Hero() {
             >
               <Link
                 href="/#projects"
-                className={`inline-flex items-center gap-2 rounded-full bg-neutral-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:-translate-y-0.5 hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 ${focusRing}`}
+                className={`accent-shadow inline-flex items-center gap-2 rounded-full bg-neutral-950 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-orange-600 dark:bg-[#f3f0e9] dark:text-neutral-950 dark:hover:bg-orange-400 ${focusRing}`}
               >
                 View Projects
               </Link>
@@ -129,7 +128,7 @@ export function Hero() {
                 className="relative overflow-hidden rounded-2xl border border-neutral-900/8 bg-white/55 p-4 text-sm text-neutral-800 shadow-[0_16px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/6 dark:text-neutral-50"
               >
                 <div
-                  className="absolute right-3 top-3 h-10 w-10 rounded-full bg-gradient-to-br from-indigo-500/70 to-sky-400/80 blur-2xl"
+                  className="absolute right-3 top-3 h-10 w-10 rounded-full bg-orange-400/40 blur-2xl"
                   aria-hidden="true"
                 />
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-600 dark:text-neutral-300">

@@ -38,7 +38,7 @@ export function ProductCaseStudy({
       </Link>
 
       <section className="mt-8 overflow-hidden rounded-[2rem] border border-white/15 bg-white/55 p-6 shadow-[0_24px_90px_rgba(15,23,42,0.14)] backdrop-blur-xl dark:bg-neutral-950/45 sm:p-10">
-        <p className="text-xs font-bold uppercase tracking-[0.22em] text-emerald-600 dark:text-emerald-300">
+        <p className="accent-text text-xs font-bold uppercase tracking-[0.22em]">
           {eyebrow}
         </p>
         <h1 className="mt-4 text-4xl font-semibold tracking-tight text-neutral-950 dark:text-white sm:text-6xl">
@@ -90,7 +90,7 @@ export function ProductCaseStudy({
       {additionalDesktopImage && additionalMobileImage ? (
         <section className="mt-8">
           <div className="mb-5">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-300">
+            <p className="accent-text text-xs font-bold uppercase tracking-[0.2em]">
               Inside the product
             </p>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight text-neutral-950 dark:text-white sm:text-3xl">
@@ -133,7 +133,7 @@ export function ProductCaseStudy({
                 key={capability}
                 className="flex gap-3 text-sm leading-6 text-neutral-700 dark:text-neutral-200"
               >
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
+                <span className="accent-dot mt-2 h-1.5 w-1.5 shrink-0 rounded-full" />
                 {capability}
               </li>
             ))}
@@ -147,7 +147,7 @@ export function ProductCaseStudy({
             The interface is responsive by design: the same product flows stay clear on a wide browser and on a phone-sized screen, without losing the project&apos;s own visual identity.
           </p>
           {note ? (
-            <p className="mt-4 rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-4 text-sm leading-6 text-emerald-900 dark:text-emerald-100">
+            <p className="accent-badge mt-4 rounded-2xl p-4 text-sm leading-6">
               {note}
             </p>
           ) : null}

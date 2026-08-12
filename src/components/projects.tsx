@@ -11,7 +11,7 @@ import { SectionHeading } from "./section-heading";
 import { ScreenshotModal } from "./screenshot-modal";
 
 const focusRing =
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500";
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500";
 
 const MAX_VISIBLE_TAGS = 5;
 
@@ -99,7 +99,7 @@ export function Projects() {
               />
               <div className="flex flex-1 flex-col gap-3 p-6 pt-3">
                 <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
-                  <span className="text-emerald-600 dark:text-emerald-400">
+                  <span className="accent-text">
                     {project.label}
                   </span>
                   {project.date ? <span>{project.date}</span> : null}
@@ -188,9 +188,8 @@ function FeaturedProjectCard({
       }`}
     >
       <div className="pointer-events-none absolute inset-0 opacity-80" aria-hidden="true">
-        <div className="absolute -left-16 top-0 h-52 w-52 rounded-full bg-violet-400/18 blur-3xl" />
-        <div className="absolute -right-10 bottom-0 h-52 w-52 rounded-full bg-emerald-400/16 blur-3xl" />
-        <div className="absolute left-1/3 top-1/2 h-44 w-44 -translate-y-1/2 rounded-full bg-white/20 blur-3xl dark:bg-white/8" />
+        <div className="absolute -right-12 top-0 h-64 w-64 rounded-full bg-orange-400/12 blur-3xl dark:bg-orange-500/8" />
+        <div className="absolute -left-12 bottom-0 h-52 w-52 rounded-full bg-amber-200/12 blur-3xl dark:bg-amber-700/5" />
       </div>
 
       <div className="relative grid gap-0 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)]">
@@ -212,7 +211,7 @@ function FeaturedProjectCard({
 
         <div className="relative order-2 flex flex-col gap-4 p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">
+            <span className="accent-badge rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
               {project.label}
             </span>
             <span className="rounded-full border border-white/20 bg-black/35 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur dark:bg-white/10">
@@ -248,7 +247,7 @@ function FeaturedProjectCard({
                   className="flex items-start gap-2 text-sm text-neutral-700 dark:text-neutral-200"
                 >
                   <span
-                    className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400"
+                    className="accent-dot mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full"
                     aria-hidden="true"
                   />
                   <span>{item}</span>
@@ -319,7 +318,7 @@ function ProjectActions({
           className={
             prominent
               ? `inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 ${focusRing}`
-              : `inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 transition hover:text-indigo-400 dark:text-indigo-300 ${focusRing} rounded-sm`
+              : `accent-text inline-flex items-center gap-2 rounded-sm text-sm font-semibold transition hover:opacity-70 ${focusRing}`
           }
         >
           {primaryLabel}

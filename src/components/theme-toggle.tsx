@@ -6,7 +6,7 @@ import { useSyncExternalStore } from "react";
 import { useTheme } from "./theme-provider";
 
 const focusRing =
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500";
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500";
 
 function subscribe() {
   return () => {};

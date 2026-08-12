@@ -15,7 +15,7 @@ const links = [
 ];
 
 const focusRing =
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500";
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500";
 
 export function Navbar() {
   const reduceMotion = usePrefersReducedMotion();
@@ -50,7 +50,7 @@ export function Navbar() {
           onClick={() => setMobileOpen(false)}
         >
           <span
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-indigo-500 via-sky-400 to-emerald-400 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30"
+            className="accent-icon grid h-10 w-10 shrink-0 place-items-center rounded-full text-sm font-semibold text-white"
             aria-hidden="true"
           >
             TZ
