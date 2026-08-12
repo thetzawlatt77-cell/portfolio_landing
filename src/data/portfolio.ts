@@ -270,6 +270,8 @@ export const galleryProjects: GalleryProject[] = [
     images: [
       "/projects/tripmate/desktop.png",
       "/projects/tripmate/mobile.png",
+      "/projects/tripmate/plan-desktop.png",
+      "/projects/tripmate/plan-mobile.png",
     ],
   },
   {
@@ -279,6 +281,8 @@ export const galleryProjects: GalleryProject[] = [
     images: [
       "/projects/dear-you/desktop.png",
       "/projects/dear-you/mobile.png",
+      "/projects/dear-you/letters-desktop.png",
+      "/projects/dear-you/letters-mobile.png",
     ],
   },
   {

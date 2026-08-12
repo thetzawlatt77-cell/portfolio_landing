@@ -15,6 +15,8 @@ export default function TripMateCaseStudyPage() {
       overview="TripMate creates a structured first draft from a traveller's destination, dates, pace, and interests. The generated plan remains editable, so AI accelerates the starting point without taking ownership away from the user."
       desktopImage="/projects/tripmate/desktop.png"
       mobileImage="/projects/tripmate/mobile.png"
+      additionalDesktopImage="/projects/tripmate/plan-desktop.png"
+      additionalMobileImage="/projects/tripmate/plan-mobile.png"
       stack={["Next.js", "TypeScript", "AI", "Supabase", "Open-Meteo", "PDF"]}
       capabilities={[
         "AI-generated day-by-day itinerary with real places and local food suggestions",

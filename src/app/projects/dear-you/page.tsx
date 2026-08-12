@@ -15,6 +15,8 @@ export default function DearYouCaseStudyPage() {
       overview="Dear You is a Burmese letter and song-request experience. It supports the path from a private submission to editorial review and, only when selected and permitted, a published letter on the public site or Dear You social channels."
       desktopImage="/projects/dear-you/desktop.png"
       mobileImage="/projects/dear-you/mobile.png"
+      additionalDesktopImage="/projects/dear-you/letters-desktop.png"
+      additionalMobileImage="/projects/dear-you/letters-mobile.png"
       stack={["Next.js", "TypeScript", "Supabase", "Authentication", "Tailwind CSS"]}
       capabilities={[
         "Three-step letter submission with optional song title, artist, and link",

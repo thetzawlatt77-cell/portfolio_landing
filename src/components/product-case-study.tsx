@@ -8,6 +8,8 @@ type ProductCaseStudyProps = {
   overview: string;
   desktopImage: string;
   mobileImage: string;
+  additionalDesktopImage?: string;
+  additionalMobileImage?: string;
   capabilities: string[];
   stack: string[];
   note?: string;
@@ -20,6 +22,8 @@ export function ProductCaseStudy({
   overview,
   desktopImage,
   mobileImage,
+  additionalDesktopImage,
+  additionalMobileImage,
   capabilities,
   stack,
   note,
@@ -82,6 +86,41 @@ export function ProductCaseStudy({
           />
         </div>
       </section>
+
+      {additionalDesktopImage && additionalMobileImage ? (
+        <section className="mt-8">
+          <div className="mb-5">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-300">
+              Inside the product
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-neutral-950 dark:text-white sm:text-3xl">
+              Beyond the landing screen
+            </h2>
+          </div>
+          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_250px]">
+            <div className="glass overflow-hidden rounded-3xl p-3 sm:p-5">
+              <div className="overflow-hidden rounded-2xl border border-white/15 bg-neutral-950">
+                <Image
+                  src={additionalDesktopImage}
+                  alt={`${title} inner desktop experience`}
+                  width={1440}
+                  height={1000}
+                  className="h-auto w-full"
+                />
+              </div>
+            </div>
+            <div className="glass mx-auto w-full max-w-[250px] overflow-hidden rounded-[2rem] p-2">
+              <Image
+                src={additionalMobileImage}
+                alt={`${title} inner mobile experience`}
+                width={390}
+                height={844}
+                className="h-auto w-full rounded-[1.55rem]"
+              />
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="mt-8 grid gap-6 md:grid-cols-2">
         <div className="glass rounded-3xl p-6 sm:p-8">
