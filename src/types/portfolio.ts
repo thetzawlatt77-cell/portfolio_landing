@@ -80,4 +80,6 @@ export type GalleryProject = {
   title: string;
   slug: string;
   images: string[];
+  /** Allows responsive web captures to mix desktop and phone aspect ratios. */
+  mixedMedia?: boolean;
 };

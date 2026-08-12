@@ -12,6 +12,7 @@ interface ScreenshotModalProps {
   title: string;
   images: string[];
   mediaType?: ProjectMediaType;
+  mixedMedia?: boolean;
 }
 
 export function ScreenshotModal({
@@ -20,10 +21,11 @@ export function ScreenshotModal({
   title,
   images,
   mediaType = "mobile",
+  mixedMedia = false,
 }: ScreenshotModalProps) {
   const reduceMotion = usePrefersReducedMotion();
   const closeRef = useRef<HTMLButtonElement>(null);
-  const isMobileGallery = mediaType === "mobile";
+  const isMobileGallery = mediaType === "mobile" && !mixedMedia;
 
   useEffect(() => {
     if (isOpen) {
@@ -93,11 +95,13 @@ export function ScreenshotModal({
                       : "grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3"
                   }
                 >
-                  {images.map((src, idx) => (
+                  {images.map((src, idx) => {
+                    const isPortrait = mixedMedia && src.includes("mobile");
+                    return (
                     <div
                       key={`${src}-${idx}`}
                       className={
-                        isMobileGallery
+                        isMobileGallery || isPortrait
                           ? "flex w-full max-w-[180px] items-center justify-center overflow-hidden rounded-[1.35rem] border border-white/10 bg-neutral-950/70 p-1.5 shadow-lg shadow-cyan-500/10 sm:max-w-[200px]"
                           : "overflow-hidden rounded-2xl border border-white/10 bg-white/50 shadow-lg shadow-indigo-500/10 backdrop-blur dark:bg-neutral-900/60"
                       }
@@ -108,12 +112,12 @@ export function ScreenshotModal({
                         width={isMobileGallery ? 395 : 1280}
                         height={isMobileGallery ? 900 : 800}
                         className={
-                          isMobileGallery
+                          isMobileGallery || isPortrait
                             ? "h-auto max-h-[min(62vh,720px)] w-full rounded-[1.1rem] object-contain"
                             : "h-auto max-h-[min(70vh,820px)] w-full object-contain bg-neutral-950/40"
                         }
                         sizes={
-                          isMobileGallery
+                          isMobileGallery || isPortrait
                             ? "(min-width: 1024px) 200px, (min-width: 640px) 28vw, 42vw"
                             : "(min-width: 1024px) 28vw, (min-width: 640px) 42vw, 90vw"
                         }
@@ -121,7 +125,8 @@ export function ScreenshotModal({
                         loading={idx < 3 ? "eager" : "lazy"}
                       />
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
 

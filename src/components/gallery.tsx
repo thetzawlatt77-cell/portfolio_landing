@@ -26,14 +26,18 @@ export function Gallery() {
               </span>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {project.images.map((src, idx) => (
+              {project.images.map((src, idx) => {
+                const isPortrait = project.mixedMedia && src.includes("mobile");
+                return (
                 <motion.div
                   key={src}
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.25, delay: Math.min(idx * 0.03, 0.15) }}
-                className="overflow-hidden rounded-2xl border border-white/10 bg-white/50 shadow-lg shadow-indigo-500/10 backdrop-blur dark:bg-neutral-900/60"
+                className={`overflow-hidden rounded-2xl border border-white/10 bg-white/50 shadow-lg shadow-indigo-500/10 backdrop-blur dark:bg-neutral-900/60 ${
+                  isPortrait ? "mx-auto w-full max-w-[240px]" : ""
+                }`}
                 >
                 <Image
                   src={src}
@@ -45,7 +49,8 @@ export function Gallery() {
                   priority={idx < 2}
                 />
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </div>
         ))}
@@ -53,4 +58,3 @@ export function Gallery() {
     </section>
   );
 }
-

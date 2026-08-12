@@ -36,8 +36,8 @@ export function Projects() {
     <section id="projects" className="space-y-6">
       <SectionHeading
         eyebrow="Projects"
-        title="Featured Mobile Projects"
-        description="Selected Flutter projects demonstrating production delivery, real-time experiences, API integrations, scalable UI, and mobile product engineering."
+        title="Selected product work"
+        description="Contract delivery, full-stack product builds, and mobile engineering—led by Cheers!, TripMate, and Dear You."
       />
 
       {featuredProjects.length > 0 ? (
@@ -148,6 +148,10 @@ export function Projects() {
             title={project.title}
             images={galleryImages}
             mediaType={project.mediaType}
+            mixedMedia={
+              galleryProjects.find((gallery) => gallery.slug === project.gallerySlug)
+                ?.mixedMedia
+            }
           />
         );
       })}

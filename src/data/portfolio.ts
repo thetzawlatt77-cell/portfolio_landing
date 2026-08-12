@@ -121,6 +121,56 @@ export const projects: Project[] = [
     caseStudyHref: "/projects/cheers",
   },
   {
+    id: "tripmate",
+    title: "TripMate",
+    subtitle: "AI-assisted, editable travel planning",
+    label: "Featured Product Build",
+    role: "Full-stack product build",
+    type: "Featured Product Build",
+    featured: true,
+    mediaType: "landscape",
+    mediaVariant: "featured",
+    mediaGlow: "mint",
+    description:
+      "A responsive travel planner that turns a traveller's basics into an editable first draft, then keeps every day, place, checklist item, and cost under the user's control.",
+    stack: ["Next.js", "TypeScript", "AI", "Supabase", "Open-Meteo"],
+    highlights: [
+      "AI-generated itinerary, checklist, and budget estimate",
+      "Editable day plans with places, maps, weather, and costs",
+      "Public share links and downloadable trip PDF",
+    ],
+    image: "/projects/tripmate/desktop.png",
+    secondaryImage: "/projects/tripmate/mobile.png",
+    gallerySlug: "tripmate",
+    caseStudySlug: "tripmate",
+    caseStudyHref: "/projects/tripmate",
+  },
+  {
+    id: "dear-you",
+    title: "Dear You",
+    subtitle: "A Burmese letter and song-request experience",
+    label: "Creative Product Platform",
+    role: "Full-stack product build",
+    type: "Creative Product Platform",
+    featured: true,
+    mediaType: "landscape",
+    mediaVariant: "featured",
+    mediaGlow: "lavender",
+    description:
+      "A mobile-first platform for sharing words left unsaid, with an editorial workflow that can bring selected letters to Dear You's public website and social channels.",
+    stack: ["Next.js", "TypeScript", "Supabase", "Authentication", "Tailwind CSS"],
+    highlights: [
+      "Three-step letter submission with optional song details",
+      "Google and magic-link sign-in with owner status tracking",
+      "Admin moderation, editorial copy, and public published letters",
+    ],
+    image: "/projects/dear-you/desktop.png",
+    secondaryImage: "/projects/dear-you/mobile.png",
+    gallerySlug: "dear-you",
+    caseStudySlug: "dear-you",
+    caseStudyHref: "/projects/dear-you",
+  },
+  {
     id: "soccer-score",
     title: "Soccer Score",
     date: "Oct 2024",
@@ -211,6 +261,24 @@ export const galleryProjects: GalleryProject[] = [
       "/projects/cheers/screens/edit-profile.jpg",
       "/projects/cheers/screens/login.jpg",
       "/projects/cheers/screens/signup.jpg",
+    ],
+  },
+  {
+    title: "TripMate",
+    slug: "tripmate",
+    mixedMedia: true,
+    images: [
+      "/projects/tripmate/desktop.png",
+      "/projects/tripmate/mobile.png",
+    ],
+  },
+  {
+    title: "Dear You",
+    slug: "dear-you",
+    mixedMedia: true,
+    images: [
+      "/projects/dear-you/desktop.png",
+      "/projects/dear-you/mobile.png",
     ],
   },
   {
@@ -336,4 +404,3 @@ export const contact: ContactItem[] = [
 
 export const contactEmail = "mailto:thetzawlatt46@gmail.com";
 export const contactLocation = "Based in Da Nang, Vietnam";
-
