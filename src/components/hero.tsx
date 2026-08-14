@@ -113,13 +113,9 @@ export function Hero() {
               src="/profile-original-gray.JPG"
               alt="Portrait of Thet Zaw Latt, Senior Flutter Developer and Product Engineer"
               fill
-              className="object-cover object-center grayscale [filter:grayscale(1)_contrast(1.35)_brightness(0.72)]"
+              className="object-cover object-center"
               sizes="(min-width: 1024px) 380px, 100vw"
               priority
-            />
-            <div
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_53%_30%,transparent_0%,rgba(0,0,0,0.06)_34%,rgba(0,0,0,0.48)_100%),linear-gradient(to_top,rgba(0,0,0,0.5),transparent_45%)]"
-              aria-hidden="true"
             />
           </motion.div>
         </div>
