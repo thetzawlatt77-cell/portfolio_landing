@@ -107,28 +107,24 @@ export function Hero() {
                   animate: { opacity: 1, scale: 1 },
                   transition: { duration: 0.45, delay: 0.12 },
                 })}
-            className="relative min-h-[430px] overflow-hidden rounded-[1.75rem] border border-neutral-900/10 bg-[#efe4d8] shadow-[0_24px_70px_rgba(35,28,21,0.14)] dark:border-white/10 dark:bg-[#24201d] sm:min-h-[520px] lg:min-h-full"
+            className="relative min-h-[430px] overflow-hidden rounded-[1.75rem] border border-neutral-900/10 bg-gradient-to-br from-[#f5e8dc] via-[#ead7c9] to-[#d9c0ae] shadow-[0_24px_70px_rgba(35,28,21,0.14)] dark:border-white/10 dark:from-[#2d2723] dark:via-[#211d1a] dark:to-[#171513] sm:min-h-[520px] lg:min-h-full"
           >
+            <div
+              className="pointer-events-none absolute left-1/2 top-[38%] h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-300/35 blur-3xl dark:bg-orange-500/15"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute left-1/2 top-[38%] h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/45 dark:border-white/10"
+              aria-hidden="true"
+            />
             <Image
-              src="/profile-portrait.png"
+              src="/profile-cutout-v2.png"
               alt="Portrait of Thet Zaw Latt, Senior Flutter Developer and Product Engineer"
               fill
-              className="object-cover object-center"
+              className="object-contain object-bottom"
               sizes="(min-width: 1024px) 380px, 100vw"
               priority
             />
-            <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-950/24 via-transparent to-white/5"
-              aria-hidden="true"
-            />
-            <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/15 bg-neutral-950/50 px-4 py-3 text-white backdrop-blur-md">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70">
-                Based in Da Nang
-              </p>
-              <p className="mt-1 text-sm font-semibold">
-                Building thoughtful mobile and product experiences
-              </p>
-            </div>
           </motion.div>
         </div>
 
