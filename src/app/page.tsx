@@ -2,6 +2,7 @@ import { Contact } from "@/components/contact";
 import { Experience } from "@/components/experience";
 import { Hero } from "@/components/hero";
 import { Navbar } from "@/components/navbar";
+import { PartnerFeedback } from "@/components/partner-feedback";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
 
@@ -19,6 +20,7 @@ export default function Home() {
           <Hero />
           <Skills />
           <Projects />
+          <PartnerFeedback />
           <Experience />
           <Contact />
         </main>
