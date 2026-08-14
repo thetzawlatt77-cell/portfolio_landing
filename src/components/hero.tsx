@@ -107,7 +107,7 @@ export function Hero() {
                   animate: { opacity: 1, scale: 1 },
                   transition: { duration: 0.45, delay: 0.12 },
                 })}
-            className="relative min-h-[430px] overflow-hidden sm:min-h-[520px] lg:min-h-full"
+            className="relative min-h-[430px] overflow-hidden rounded-[1.75rem] sm:min-h-[520px] lg:min-h-full"
           >
             <Image
               src="/profile-original-gray.JPG"
