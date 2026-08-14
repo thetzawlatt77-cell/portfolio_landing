@@ -107,16 +107,8 @@ export function Hero() {
                   animate: { opacity: 1, scale: 1 },
                   transition: { duration: 0.45, delay: 0.12 },
                 })}
-            className="relative min-h-[430px] overflow-hidden rounded-[1.75rem] border border-neutral-900/10 bg-gradient-to-br from-[#f5e8dc] via-[#ead7c9] to-[#d9c0ae] shadow-[0_24px_70px_rgba(35,28,21,0.14)] dark:border-white/10 dark:from-[#2d2723] dark:via-[#211d1a] dark:to-[#171513] sm:min-h-[520px] lg:min-h-full"
+            className="relative min-h-[430px] sm:min-h-[520px] lg:min-h-full"
           >
-            <div
-              className="pointer-events-none absolute left-1/2 top-[38%] h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-300/35 blur-3xl dark:bg-orange-500/15"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute left-1/2 top-[38%] h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/45 dark:border-white/10"
-              aria-hidden="true"
-            />
             <Image
               src="/profile-cutout-v2.png"
               alt="Portrait of Thet Zaw Latt, Senior Flutter Developer and Product Engineer"
