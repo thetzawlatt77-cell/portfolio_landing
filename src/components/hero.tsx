@@ -121,7 +121,7 @@ export function Hero() {
               src="/profile-cutout-v2.png"
               alt="Portrait of Thet Zaw Latt, Senior Flutter Developer and Product Engineer"
               fill
-              className="object-contain object-bottom"
+              className="object-contain object-bottom [filter:drop-shadow(2px_0_0_rgba(255,253,249,0.9))_drop-shadow(-2px_0_0_rgba(255,253,249,0.9))_drop-shadow(0_2px_0_rgba(255,253,249,0.9))_drop-shadow(0_-2px_0_rgba(255,253,249,0.9))_drop-shadow(0_18px_24px_rgba(35,28,21,0.2))]"
               sizes="(min-width: 1024px) 380px, 100vw"
               priority
             />
