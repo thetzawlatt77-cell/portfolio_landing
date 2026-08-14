@@ -27,7 +27,7 @@ export function Hero() {
         <div className="pointer-events-none absolute inset-0 opacity-80 blur-3xl" aria-hidden="true">
           <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full bg-orange-400/18 dark:bg-orange-500/12" />
         </div>
-        <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+        <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(300px,0.42fr)] lg:items-stretch lg:gap-10">
           <div className="min-w-0 flex-1 space-y-5 sm:space-y-6">
             <motion.div
               {...(reduceMotion
@@ -37,30 +37,18 @@ export function Hero() {
                     animate: { opacity: 1, scale: 1 },
                     transition: { duration: 0.4 },
                   })}
-              className="flex items-center gap-4 sm:gap-6"
+              className="flex items-center"
             >
-              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-4 border-white/70 shadow-xl ring-4 ring-orange-500/15 dark:border-neutral-800/70 sm:h-32 sm:w-32">
-                <Image
-                  src="/pp.png"
-                  alt="Portrait of Thet Zaw Latt, Senior Flutter Developer and Product Engineer"
-                  fill
-                  className="object-cover"
-                  sizes="128px"
-                  priority
+              <motion.div
+                {...fade(0.1, 12)}
+                className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-white/20 bg-white/60 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-700 backdrop-blur dark:bg-neutral-900/70 dark:text-neutral-100 sm:text-xs sm:tracking-[0.18em]"
+              >
+                {hero.eyebrow}
+                <span
+                  className="accent-dot h-2 w-2 shrink-0 rounded-full"
+                  aria-hidden="true"
                 />
-              </div>
-              <div className="min-w-0 flex-1">
-                <motion.div
-                  {...fade(0.1, 12)}
-                  className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-white/20 bg-white/60 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-700 backdrop-blur dark:bg-neutral-900/70 dark:text-neutral-100 sm:text-xs sm:tracking-[0.18em]"
-                >
-                  {hero.eyebrow}
-                  <span
-                    className="accent-dot h-2 w-2 shrink-0 rounded-full"
-                    aria-hidden="true"
-                  />
-                </motion.div>
-              </div>
+              </motion.div>
             </motion.div>
 
             <motion.h1
@@ -119,28 +107,54 @@ export function Hero() {
                   animate: { opacity: 1, scale: 1 },
                   transition: { duration: 0.45, delay: 0.12 },
                 })}
-            className="grid w-full gap-3 sm:grid-cols-2 lg:max-w-md lg:shrink-0"
-            aria-label="Core capabilities"
+            className="relative min-h-[430px] overflow-hidden rounded-[1.75rem] border border-neutral-900/10 bg-[#efe4d8] shadow-[0_24px_70px_rgba(35,28,21,0.14)] dark:border-white/10 dark:bg-[#24201d] sm:min-h-[520px] lg:min-h-full"
           >
-            {hero.highlights.map((item) => (
-              <div
-                key={item.label}
-                className="relative overflow-hidden rounded-2xl border border-neutral-900/8 bg-white/55 p-4 text-sm text-neutral-800 shadow-[0_16px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/6 dark:text-neutral-50"
-              >
-                <div
-                  className="absolute right-3 top-3 h-10 w-10 rounded-full bg-orange-400/40 blur-2xl"
-                  aria-hidden="true"
-                />
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-600 dark:text-neutral-300">
-                  {item.label}
-                </p>
-                <p className="mt-2 font-semibold text-neutral-900 dark:text-white">
-                  {item.value}
-                </p>
-              </div>
-            ))}
+            <Image
+              src="/profile-portrait.png"
+              alt="Portrait of Thet Zaw Latt, Senior Flutter Developer and Product Engineer"
+              fill
+              className="object-cover object-center"
+              sizes="(min-width: 1024px) 380px, 100vw"
+              priority
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-950/24 via-transparent to-white/5"
+              aria-hidden="true"
+            />
+            <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/15 bg-neutral-950/50 px-4 py-3 text-white backdrop-blur-md">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70">
+                Based in Da Nang
+              </p>
+              <p className="mt-1 text-sm font-semibold">
+                Building thoughtful mobile and product experiences
+              </p>
+            </div>
           </motion.div>
         </div>
+
+        <motion.div
+          {...fade(0.2, 14)}
+          className="relative mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
+          aria-label="Core capabilities"
+        >
+          {hero.highlights.map((item) => (
+            <div
+              key={item.label}
+              className="relative overflow-hidden rounded-2xl border border-neutral-900/8 bg-white/55 p-4 text-sm text-neutral-800 shadow-[0_16px_45px_rgba(15,23,42,0.06)] backdrop-blur-xl dark:border-white/10 dark:bg-white/6 dark:text-neutral-50"
+            >
+              <div
+                className="absolute right-3 top-3 h-10 w-10 rounded-full bg-orange-400/40 blur-2xl"
+                aria-hidden="true"
+              />
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-600 dark:text-neutral-300">
+                {item.label}
+              </p>
+              <p className="mt-2 font-semibold text-neutral-900 dark:text-white">
+                {item.value}
+              </p>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
