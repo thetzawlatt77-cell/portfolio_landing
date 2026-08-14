@@ -107,15 +107,19 @@ export function Hero() {
                   animate: { opacity: 1, scale: 1 },
                   transition: { duration: 0.45, delay: 0.12 },
                 })}
-            className="relative min-h-[430px] sm:min-h-[520px] lg:min-h-full"
+            className="relative min-h-[430px] overflow-hidden sm:min-h-[520px] lg:min-h-full"
           >
             <Image
-              src="/profile-cutout-v2.png"
+              src="/profile-original-gray.JPG"
               alt="Portrait of Thet Zaw Latt, Senior Flutter Developer and Product Engineer"
               fill
-              className="object-contain object-bottom [filter:drop-shadow(2px_0_0_rgba(255,253,249,0.9))_drop-shadow(-2px_0_0_rgba(255,253,249,0.9))_drop-shadow(0_2px_0_rgba(255,253,249,0.9))_drop-shadow(0_-2px_0_rgba(255,253,249,0.9))_drop-shadow(0_18px_24px_rgba(35,28,21,0.2))]"
+              className="object-cover object-center grayscale [filter:grayscale(1)_contrast(1.35)_brightness(0.72)]"
               sizes="(min-width: 1024px) 380px, 100vw"
               priority
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_53%_30%,transparent_0%,rgba(0,0,0,0.06)_34%,rgba(0,0,0,0.48)_100%),linear-gradient(to_top,rgba(0,0,0,0.5),transparent_45%)]"
+              aria-hidden="true"
             />
           </motion.div>
         </div>
