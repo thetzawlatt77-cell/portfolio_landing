@@ -52,6 +52,8 @@ export type Project = {
   repoUrl?: string;
   /** Internal case study route when available. */
   caseStudyHref?: string;
+  /** Optional in-page or public product demonstration link. */
+  demoHref?: string;
 };
 
 export type Experience = {

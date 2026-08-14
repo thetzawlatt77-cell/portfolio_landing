@@ -22,8 +22,12 @@ export const cheersCaseStudy = {
   badge: "Client Contract Project",
   overview:
     "A Flutter rebuild of an existing MVP focused on real-time collaboration, shared planning, budgeting, task management, and a polished mobile experience.",
-  coverImage: "/projects/cheers/screens/home.jpg",
-  secondaryCoverImage: "/projects/cheers/screens/profile.jpg",
+  coverImage: "/gallery/Cheers/cheers1.avif",
+  secondaryCoverImage: "/gallery/Cheers/cheers2.avif",
+  demoVideo: {
+    src: "/gallery/Cheers/cheers.mp4",
+    poster: "/gallery/Cheers/cheers1.avif",
+  },
   meta: {
     role: "Senior Flutter Developer / Full Product Implementation",
     platform: "iOS & Android",
@@ -109,28 +113,28 @@ export const cheersCaseStudy = {
   screens: [
     {
       label: "Home",
-      src: "/projects/cheers/screens/home.jpg",
-      alt: "Cheers home screen with next-up experience and quick actions",
+      src: "/gallery/Cheers/cheers1.avif",
+      alt: "Cheers home screen with an upcoming experience and quick actions",
     },
     {
-      label: "Profile",
-      src: "/projects/cheers/screens/profile.jpg",
-      alt: "Cheers profile screen with account settings",
+      label: "Tasks",
+      src: "/gallery/Cheers/cheers2.avif",
+      alt: "Cheers task list with progress filters and assignments",
     },
     {
-      label: "Edit Profile",
-      src: "/projects/cheers/screens/edit-profile.jpg",
-      alt: "Cheers edit profile sheet for name and email updates",
+      label: "Experience Overview",
+      src: "/gallery/Cheers/cheers3.avif",
+      alt: "Cheers experience overview with agenda, tasks, and finances",
     },
     {
-      label: "Log In",
-      src: "/projects/cheers/screens/login.jpg",
-      alt: "Cheers login screen with email and Apple sign-in",
+      label: "Finances",
+      src: "/gallery/Cheers/cheers4.avif",
+      alt: "Cheers finances screen with budget, balances, and recent expenses",
     },
     {
-      label: "Sign Up",
-      src: "/projects/cheers/screens/signup.jpg",
-      alt: "Cheers sign-up screen with account creation flow",
+      label: "Mood Board",
+      src: "/gallery/Cheers/cheers5.avif",
+      alt: "Cheers mood board with shared event inspiration images",
     },
   ] satisfies CaseStudyScreen[],
   engineeringFocus: [

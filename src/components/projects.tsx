@@ -326,6 +326,16 @@ function ProjectActions({
         </Link>
       ) : null}
 
+      {project.demoHref ? (
+        <Link
+          href={project.demoHref}
+          className={`inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300/70 bg-white/50 px-4 py-2.5 text-sm font-semibold text-neutral-800 transition hover:border-neutral-800 hover:bg-white/80 dark:border-white/20 dark:bg-neutral-900/50 dark:text-white dark:hover:border-white/50 dark:hover:bg-neutral-800/80 ${focusRing}`}
+        >
+          <PlayIcon className="h-4 w-4" />
+          Watch Demo
+        </Link>
+      ) : null}
+
       {hasScreenshots ? (
         <button
           type="button"
@@ -348,6 +358,22 @@ function ProjectActions({
         </span>
       ) : null}
     </div>
+  );
+}
+
+function PlayIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="m10 8 6 4-6 4V8Z" fill="currentColor" stroke="none" />
+    </svg>
   );
 }
 

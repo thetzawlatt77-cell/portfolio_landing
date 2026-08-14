@@ -245,6 +245,50 @@ export function CheersCaseStudy() {
         </motion.div>
       </section>
 
+      {/* Product Demo */}
+      <section id="product-demo" className="scroll-mt-24 space-y-6">
+        <SectionHeading
+          eyebrow="Product Demo"
+          title="See Cheers! in motion"
+          description="A guided look at the delivered mobile experience and its core interaction flows."
+        />
+        <motion.div
+          {...fade(0.05)}
+          className="glass relative overflow-hidden rounded-3xl p-3 sm:p-5"
+        >
+          <div
+            className="pointer-events-none absolute inset-x-12 top-0 h-36 rounded-full bg-orange-300/15 blur-3xl dark:bg-orange-700/8"
+            aria-hidden="true"
+          />
+          <div className="relative overflow-hidden rounded-[1.35rem] border border-neutral-900/10 bg-neutral-950 shadow-[0_24px_70px_rgba(35,28,21,0.18)] dark:border-white/10">
+            <video
+              className="aspect-video w-full bg-neutral-950 object-contain"
+              controls
+              playsInline
+              preload="metadata"
+              poster={cheersCaseStudy.demoVideo.poster}
+              aria-label="Cheers mobile application video demonstration"
+            >
+              <source src={cheersCaseStudy.demoVideo.src} type="video/mp4" />
+              Your browser does not support embedded video playback.
+            </video>
+          </div>
+          <div className="relative flex flex-col gap-2 px-2 pb-1 pt-4 sm:flex-row sm:items-center sm:justify-between sm:px-3">
+            <div>
+              <p className="text-sm font-semibold text-neutral-900 dark:text-white">
+                Cheers! product walkthrough
+              </p>
+              <p className="mt-1 text-xs leading-5 text-neutral-500 dark:text-neutral-400">
+                Use the player controls to watch, pause, seek, or view full screen.
+              </p>
+            </div>
+            <span className="accent-badge w-fit rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em]">
+              Video Demo
+            </span>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Screens */}
       <section className="space-y-6">
         <SectionHeading
