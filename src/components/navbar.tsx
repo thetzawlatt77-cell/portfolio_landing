@@ -57,8 +57,8 @@ export function Navbar() {
             TZ
           </span>
           <div className="hidden min-w-0 sm:block">
-            <p className="truncate text-xs uppercase tracking-[0.2em] text-neutral-600 dark:text-neutral-300">
-              Software Engineering · Flutter &amp; Mobile
+            <p className="text-xs uppercase tracking-[0.16em] text-neutral-600 dark:text-neutral-300">
+              Software Engineer · Flutter
             </p>
             <p className="truncate text-sm font-semibold text-neutral-900 dark:text-white">
               Thet Zaw Latt
