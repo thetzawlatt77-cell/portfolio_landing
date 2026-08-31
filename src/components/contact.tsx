@@ -23,7 +23,7 @@ export function Contact() {
       <SectionHeading
         eyebrow="Contact"
         title="Let’s build a product that ships"
-        description="Open to senior Flutter and mobile roles, product engineering opportunities, and selected contract projects in Vietnam or remotely."
+        description="Open to software engineering, Flutter and mobile development, product engineering, and selected contract opportunities in Vietnam or remotely."
       />
 
       <p className="text-sm text-neutral-500 dark:text-neutral-400">

@@ -4,13 +4,13 @@ import { CheersCaseStudy } from "@/components/cheers-case-study";
 import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
-  title: "Cheers! Flutter Case Study | Thet Zaw Latt",
+  title: "Cheers! Mobile Software Engineering Case Study | Thet Zaw Latt",
   description:
-    "Senior Flutter Developer case study covering a collaborative event-planning and shared-finance application built with Flutter, Firebase, Riverpod, and Firestore.",
+    "Mobile software engineering case study covering architecture, state and data flow, Firebase integration, testing, and delivery for a Flutter collaboration and shared-finance application.",
   openGraph: {
-    title: "Cheers! Flutter Case Study | Thet Zaw Latt",
+    title: "Cheers! Mobile Software Engineering Case Study | Thet Zaw Latt",
     description:
-      "Senior Flutter Developer case study covering a collaborative event-planning and shared-finance application built with Flutter, Firebase, Riverpod, and Firestore.",
+      "Mobile software engineering case study covering architecture, state and data flow, Firebase integration, testing, and delivery for a Flutter collaboration and shared-finance application.",
     type: "article",
     images: [
       {
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cheers! Flutter Case Study | Thet Zaw Latt",
+    title: "Cheers! Mobile Software Engineering Case Study | Thet Zaw Latt",
     description:
-      "Senior Flutter Developer case study covering a collaborative event-planning and shared-finance application built with Flutter, Firebase, Riverpod, and Firestore.",
+      "Mobile software engineering case study covering architecture, state and data flow, Firebase integration, testing, and delivery for a Flutter collaboration and shared-finance application.",
     images: ["/projects/cheers/cover.jpg"],
   },
 };

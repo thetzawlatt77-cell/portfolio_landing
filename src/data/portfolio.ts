@@ -8,12 +8,12 @@ import {
 
 export const hero = {
   name: "Thet Zaw Latt",
-  title: "Senior Flutter Developer & Product Engineer",
-  eyebrow: "Mobile-first product builder • 5+ years",
+  title: "Software Engineer | Flutter & Mobile Development",
+  eyebrow: "Software engineering • Mobile specialization • 5+ years",
   description:
-    "I build production mobile apps and turn product ideas into polished, working experiences—from Flutter clients to AI-assisted web products.",
+    "I design, build, test, release, and maintain production software, specializing in Flutter applications for iOS and Android.",
   secondaryDescription:
-    "My core strength is Flutter delivery, supported by hands-on product engineering with Next.js, Supabase, Firebase, APIs, and AI workflows.",
+    "My strongest area is end-to-end mobile delivery: maintainable architecture, state and data flow, API and Firebase integration, debugging, performance, and store releases—supported by hands-on product engineering with Next.js and Supabase.",
   location:
     "Based in Da Nang, Vietnam • Open to senior mobile roles, product engineering opportunities, and selected contract work",
   highlights: [
@@ -102,14 +102,14 @@ export const projects: Project[] = [
     title: "Cheers!",
     subtitle: "Collaborative Event Planning & Shared Finance App",
     label: "Featured Contract Project",
-    role: "Client Contract Project",
+    role: "Mobile Software Engineer / Flutter Developer",
     type: "Client Contract Project",
     featured: true,
     mediaType: "mobile",
     mediaVariant: "featured",
     mediaGlow: "cheers",
     description:
-      "A Flutter rebuild of an existing MVP focused on scalable architecture, real-time collaboration, shared planning, budgeting, task management, and a polished mobile experience.",
+      "Re-engineered an existing MVP in Flutter with maintainable architecture, Riverpod-managed state and data flow, Firebase integration, tested business rules, and production-ready collaborative mobile workflows.",
     stack: [
       "Flutter",
       "Dart",
@@ -119,9 +119,9 @@ export const projects: Project[] = [
       "Riverpod",
     ],
     highlights: [
-      "Real-time collaborative experiences",
-      "Tasks, budgets, and shared expense workflows",
-      "Tested business logic and Firebase-backed data flows",
+      "Feature-first architecture with Riverpod state management",
+      "Firebase-backed collaboration, permissions, tasks, budgets, and shared expenses",
+      "122 tests covering domain rules, routing, finance calculations, and error handling",
     ],
     image: "/gallery/Cheers/cheers1.avif",
     secondaryImage: "/gallery/Cheers/cheers2.avif",
@@ -260,10 +260,9 @@ export const experiences: Experience[] = [
     company: "Freelance",
     period: "06/2024 – Now",
     bullets: [
-      "Delivered contract-based Flutter applications from UI implementation through production-ready delivery.",
-      "Built and integrated Firebase and REST-backed mobile workflows.",
-      "Owned feature implementation, debugging, testing, and release preparation.",
-      "Completed the Cheers! Flutter rebuild as a client contract project.",
+      "Delivered contract Flutter applications across implementation, Firebase/API integration, debugging, testing, and release preparation.",
+      "Structured maintainable features with reusable UI, managed state and data flow, and clear separation between presentation and data services.",
+      "Completed the Cheers! rebuild with real-time collaboration, tested business rules, and Firebase-backed workflows.",
     ],
     secondaryNote:
       "Additional full-stack delivery using Node.js, MongoDB, and Next.js.",
@@ -273,7 +272,7 @@ export const experiences: Experience[] = [
     company: "Myanmar Impact Technologies",
     period: "02/2024 – 06/2024",
     bullets: [
-      "Developed a Flutter marketplace application for rice sellers and buyers.",
+      "Developed and maintained a Flutter marketplace application for rice sellers and buyers.",
       "Translated high-fidelity Figma designs into production-ready Flutter UI.",
       "Focused on smooth performance across Android and iOS devices.",
       "Coordinated with backend and QA teams for sprint delivery.",
@@ -288,7 +287,7 @@ export const experiences: Experience[] = [
       "Built movie-streaming features and integrated an Android-native video player into Flutter through Platform Channels.",
       "Implemented complex Figma-based UI and playback-facing mobile workflows.",
       "Worked with GetX/Provider and API-driven application state.",
-      "Supported commercial app publishing.",
+      "Debugged API-driven flows and supported commercial App Store and Google Play publishing.",
     ],
   },
   {

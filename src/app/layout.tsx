@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const siteTitle = "Thet Zaw Latt | Senior Flutter Developer & Product Engineer";
+const siteTitle = "Thet Zaw Latt | Software Engineer | Flutter & Mobile Development";
 const siteDescription =
-  "Senior Flutter Developer and Product Engineer based in Da Nang, Vietnam, building production mobile apps and focused full-stack products with Flutter, Next.js, Supabase, Firebase, APIs, and AI.";
+  "Software Engineer based in Da Nang, Vietnam, specializing in Flutter and mobile development across architecture, Firebase and API integration, testing, release, and maintenance.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-tzl.vercel.app"),
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Thet Zaw Latt",
+    "Software Engineer",
     "Senior Flutter Developer",
     "Flutter developer",
     "Mobile engineer",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
         url: "/pp.png",
         width: 1200,
         height: 1200,
-        alt: "Thet Zaw Latt, Senior Flutter Developer and Product Engineer",
+        alt: "Thet Zaw Latt, Software Engineer specializing in Flutter and mobile development",
       },
     ],
   },

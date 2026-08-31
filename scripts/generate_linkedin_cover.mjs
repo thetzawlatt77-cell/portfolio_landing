@@ -38,12 +38,12 @@ const svg = `
   <g transform="translate(510 54)">
     <rect x="0" y="0" width="330" height="31" rx="15.5" fill="#ffffff" fill-opacity="0.055" stroke="#ffffff" stroke-opacity="0.13"/>
     <circle cx="18" cy="15.5" r="4" fill="#ff7657"/>
-    <text x="32" y="20" fill="#d9d4d0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="2.4">MOBILE-FIRST PRODUCT BUILDER</text>
+      <text x="32" y="20" fill="#d9d4d0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="2.4">SOFTWARE ENGINEERING · MOBILE SPECIALIZATION</text>
 
-    <text x="0" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="47" font-weight="700" letter-spacing="-1.2">Senior Flutter Developer</text>
-    <text x="0" y="143" fill="#ff7657" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" letter-spacing="-0.8">&amp; Product Engineer</text>
+    <text x="0" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="47" font-weight="700" letter-spacing="-1.2">Software Engineer</text>
+    <text x="0" y="143" fill="#ff7657" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" letter-spacing="-0.8">Flutter &amp; Mobile Development</text>
 
-    <text x="0" y="190" fill="#c8c2bd" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400">Building production mobile apps and polished product experiences.</text>
+    <text x="0" y="190" fill="#c8c2bd" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400">Architecture · Integration · Testing · Release · Maintenance</text>
 
     <g transform="translate(0 220)">
       <rect width="650" height="41" rx="20.5" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.11"/>

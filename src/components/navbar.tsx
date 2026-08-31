@@ -47,7 +47,7 @@ export function Navbar() {
         <Link
           href="/#hero"
           className={`flex min-w-0 items-center gap-3 rounded-full ${focusRing}`}
-          aria-label="Thet Zaw Latt — Senior Flutter Developer and Product Engineer, go to About"
+          aria-label="Thet Zaw Latt — Software Engineer specializing in Flutter and mobile development, go to About"
           onClick={() => setMobileOpen(false)}
         >
           <span
@@ -58,7 +58,7 @@ export function Navbar() {
           </span>
           <div className="hidden min-w-0 sm:block">
             <p className="truncate text-xs uppercase tracking-[0.2em] text-neutral-600 dark:text-neutral-300">
-              Flutter · Product Engineering
+              Software Engineering · Flutter &amp; Mobile
             </p>
             <p className="truncate text-sm font-semibold text-neutral-900 dark:text-white">
               Thet Zaw Latt
@@ -80,7 +80,7 @@ export function Navbar() {
 
         <div className="flex shrink-0 items-center gap-2">
           <Link
-            href="/Thet_Zaw_Latt_Senior_Flutter_CV.pdf"
+            href="/Thet_Zaw_Latt_Software_Engineer_CV.pdf"
             download
             aria-label="Download Thet Zaw Latt CV as PDF"
             className={`hidden rounded-full bg-neutral-900 px-3 py-2 text-sm font-semibold text-white transition hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 md:inline-flex ${focusRing}`}
@@ -118,7 +118,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="/Thet_Zaw_Latt_Senior_Flutter_CV.pdf"
+              href="/Thet_Zaw_Latt_Software_Engineer_CV.pdf"
               download
               aria-label="Download Thet Zaw Latt CV as PDF"
               className={`mt-1 rounded-2xl bg-neutral-900 px-4 py-3 text-center text-sm font-semibold text-white dark:bg-white dark:text-neutral-900 ${focusRing}`}

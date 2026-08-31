@@ -21,7 +21,7 @@ export const cheersCaseStudy = {
   subtitle: "Collaborative Event Planning & Shared Finance App",
   badge: "Client Contract Project",
   overview:
-    "A Flutter rebuild of an existing MVP focused on real-time collaboration, shared planning, budgeting, task management, and a polished mobile experience.",
+    "An end-to-end Flutter re-engineering of an existing MVP, covering maintainable architecture, state and data flow, Firebase services, tested business logic, and polished collaborative experiences for iOS and Android.",
   coverImage: "/gallery/Cheers/cheers1.avif",
   secondaryCoverImage: "/gallery/Cheers/cheers2.avif",
   demoVideo: {
@@ -29,7 +29,7 @@ export const cheersCaseStudy = {
     poster: "/gallery/Cheers/cheers1.avif",
   },
   meta: {
-    role: "Senior Flutter Developer / Full Product Implementation",
+    role: "Mobile Software Engineer / Flutter Developer",
     platform: "iOS & Android",
     projectType: "Client Contract",
     coreStack: "Flutter • Dart • Firebase • Riverpod • Firestore",
@@ -148,7 +148,7 @@ export const cheersCaseStudy = {
   ],
   delivery: {
     heading: "Delivery",
-    body: "Successfully completed and delivered as a client contract project, covering the core Flutter product experience, Firebase integrations, collaborative workflows, business logic, and testing.",
+    body: "Completed and delivered as a client contract project, with responsibility spanning Flutter architecture and implementation, Riverpod state and data flow, Firebase integrations, collaborative workflows, debugging, and a 122-test suite for critical business logic.",
   },
   nextProject: {
     title: "TripMate",

@@ -13,7 +13,7 @@ export function Experience() {
       <SectionHeading
         eyebrow="Experience"
         title="Built through real delivery"
-        description="More than five years shipping mobile products across fintech, marketplaces, streaming, internal tools, and client-led builds."
+        description="More than five years taking mobile software from UI and integration through testing, release, and maintenance across fintech, marketplaces, streaming, internal tools, and client-led builds."
       />
       <div className="relative space-y-4 border-l border-neutral-200/70 pl-5 dark:border-neutral-800 sm:pl-6">
         {experiences.map((exp, idx) => (

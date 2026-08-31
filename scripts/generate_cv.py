@@ -15,7 +15,7 @@ from reportlab.platypus import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "public" / "Thet_Zaw_Latt_Senior_Flutter_CV.pdf"
+OUTPUT = ROOT / "public" / "Thet_Zaw_Latt_Software_Engineer_CV.pdf"
 
 NAVY = colors.HexColor("#173B4C")
 BLUE = colors.HexColor("#17628E")
@@ -147,7 +147,7 @@ def selected_project(title: str, label: str, description: str, url: str):
 
 def footer(canvas, doc):
     canvas.saveState()
-    footer = Paragraph("Thet Zaw Latt &nbsp;|&nbsp; Senior Flutter Developer &amp; Product Engineer", footer_style)
+    footer = Paragraph("Thet Zaw Latt &nbsp;|&nbsp; Software Engineer - Flutter &amp; Mobile Development", footer_style)
     width, height = footer.wrap(doc.width, 0.3 * inch)
     footer.drawOn(canvas, doc.leftMargin, 0.31 * inch)
     canvas.restoreState()
@@ -155,7 +155,7 @@ def footer(canvas, doc):
 
 story = [
     Paragraph("Thet Zaw Latt", name_style),
-    Paragraph("SENIOR FLUTTER DEVELOPER &nbsp;|&nbsp; PRODUCT ENGINEER", title_style),
+    Paragraph("SOFTWARE ENGINEER &nbsp;|&nbsp; FLUTTER &amp; MOBILE DEVELOPMENT", title_style),
     Paragraph(
         'Da Nang, Vietnam &nbsp;|&nbsp; 0942686025 &nbsp;|&nbsp; '
         '<link href="mailto:thetzawlatt46@gmail.com" color="#17628E">thetzawlatt46@gmail.com</link> &nbsp;|&nbsp; '
@@ -166,11 +166,11 @@ story = [
     ),
     *section("PROFESSIONAL SUMMARY"),
     Paragraph(
-        "Senior Flutter Developer and product engineer with 5+ years of experience building and shipping production mobile applications "
-        "for iOS and Android. Strong in Flutter/Dart, Firebase, REST APIs, Riverpod/Provider/GetX, architecture, testing, performance "
-        "optimization, and end-to-end release. Experienced turning product ideas and Figma designs into polished user experiences, "
-        "collaborating across backend, QA, and product teams, and delivering supporting web products with Next.js, TypeScript, Supabase, "
-        "and AI-assisted workflows.",
+        "Software Engineer with 5+ years of experience designing, building, testing, releasing, and maintaining production mobile "
+        "applications for iOS and Android. Specializes in Flutter/Dart, with hands-on responsibility for architecture, state and data "
+        "flow, Firebase and REST API integration, debugging, performance optimization, and store releases. Experienced turning product "
+        "ideas and Figma designs into polished user experiences, collaborating with backend and QA teams, and delivering supporting web "
+        "products with Next.js, TypeScript, and Supabase.",
         body_style,
     ),
     *section("CORE EXPERTISE"),
@@ -185,8 +185,8 @@ story = [
         "Senior Flutter Developer",
         "Contract Projects / Freelance",
         [
-            "Deliver contract Flutter applications from UI implementation and Firebase/API integration through debugging, testing, and release preparation.",
-            "Completed the Cheers! Flutter rebuild with real-time collaborative flows, tasks, budgets, shared expenses, and Firebase-backed workflows.",
+            "Deliver contract Flutter applications across architecture, UI implementation, Firebase/API integration, debugging, testing, and release preparation.",
+            "Completed the Cheers! rebuild with Riverpod-managed state and data flow, real-time collaboration, shared finance workflows, and 122 tests for critical business logic.",
             "Provide supporting product delivery with Node.js, MongoDB, Next.js, and Tailwind CSS when projects require APIs, admin tooling, or web experiences.",
         ],
     ),
@@ -240,7 +240,7 @@ story = [
     *selected_project(
         "Cheers! - Collaborative Event Planning &amp; Shared Finance App",
         "Featured Contract Project",
-        "Rebuilt an existing MVP in Flutter with Firebase and Riverpod. Delivered real-time collaboration, tasks, budgets, shared expenses, member permissions, notification routing, and tested business logic.",
+        "Re-engineered an existing MVP in Flutter with feature-first architecture, Riverpod state and data flow, Firebase services, real-time collaboration, shared finance workflows, and 122 tests covering critical business logic.",
         f"{PORTFOLIO}/projects/cheers",
     ),
     *selected_project(
@@ -275,10 +275,10 @@ doc = SimpleDocTemplate(
     leftMargin=42,
     topMargin=34,
     bottomMargin=43,
-    title="Thet Zaw Latt - Senior Flutter Developer & Product Engineer CV",
+    title="Thet Zaw Latt - Software Engineer - Flutter & Mobile Development CV",
     author="Thet Zaw Latt",
-    subject="Senior Flutter Developer / Product Engineer",
-    keywords="Flutter, Dart, Firebase, Riverpod, Next.js, Supabase, Product Engineer",
+    subject="Software Engineer - Flutter & Mobile Development",
+    keywords="Software Engineer, Flutter, Mobile Development, Dart, Firebase, Riverpod, Next.js, Supabase",
 )
 
 doc.build(story, onFirstPage=footer, onLaterPages=footer)

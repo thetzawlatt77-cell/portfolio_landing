@@ -89,7 +89,7 @@ export function Hero() {
                 View Projects
               </Link>
               <Link
-                href="/Thet_Zaw_Latt_Senior_Flutter_CV.pdf"
+                href="/Thet_Zaw_Latt_Software_Engineer_CV.pdf"
                 download
                 aria-label="Download Thet Zaw Latt CV as PDF"
                 className={`inline-flex items-center gap-2 rounded-full border border-neutral-300/70 bg-white/50 px-5 py-3 text-sm font-semibold text-neutral-800 transition hover:-translate-y-0.5 hover:border-neutral-800 dark:border-white/20 dark:bg-neutral-900/40 dark:text-white dark:hover:border-white/50 ${focusRing}`}
@@ -111,7 +111,7 @@ export function Hero() {
           >
             <Image
               src="/profile-original-gray.JPG"
-              alt="Portrait of Thet Zaw Latt, Senior Flutter Developer and Product Engineer"
+              alt="Portrait of Thet Zaw Latt, Software Engineer specializing in Flutter and mobile development"
               fill
               className="object-cover object-center"
               sizes="(min-width: 1024px) 380px, 100vw"

@@ -12,8 +12,8 @@ export function Skills() {
     <section id="skills" className="space-y-6">
       <SectionHeading
         eyebrow="Skills"
-        title="Mobile depth, product breadth"
-        description="Senior Flutter delivery backed by the full-stack skills needed to take focused product ideas from concept to a working release."
+        title="Software engineering with mobile depth"
+        description="Flutter is my strongest specialization, supported by architecture, integrations, state and data flow, testing, debugging, release, and maintenance skills."
       />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
